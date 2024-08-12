@@ -2,7 +2,7 @@
 #include <string.h>
 
 #ifdef __WEBROGUE__
-#include <wr_gl/wr_gl.h>
+#include <webrogue_gfx/webrogue_gfx.h>
 #else
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
@@ -137,6 +137,7 @@ int main(void) {
   GLuint shader_program, vbo;
   GLint pos;
 #ifdef __WEBROGUE__
+  webrogue_gfx_make_window();
 #else
   u32 WindowFlags = SDL_WINDOW_OPENGL;
   SDL_Window *Window =
@@ -168,7 +169,7 @@ int main(void) {
     glUseProgram(shader_program);
     glDrawArrays(GL_TRIANGLES, 0, 3);
 #ifdef __WEBROGUE__
-    wr_gl_present();
+    webrogue_gfx_present();
 #else
     SDL_GL_SwapWindow(Window);
 #endif
