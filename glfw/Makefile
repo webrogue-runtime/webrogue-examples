@@ -4,9 +4,10 @@ CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 ROOT_DIR:=$(shell dirname $(CURRENT_DIR))
 
 BUILD:
-	cmake -S . -B build --toolchain=$(CURRENT_DIR)/toolchain.cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	cmake --build build --target=triangle-opengles --parallel
-	cp build/glfw/examples/triangle-opengles main.wasm
+	rm -f main.wasm
+	cmake -S . -B build --toolchain=$(CURRENT_DIR)/toolchain.cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug
+	cmake --build build --target=main --parallel
+	cp build/main main.wasm
 
 main.wasm: BUILD
 

@@ -1,4 +1,4 @@
-all: build_wrapp build_simple build_opengl build_gears
+all: build_wrapp build_simple build_opengl build_gears build_glfw
 
 # utility
 build_wrapp:
@@ -20,3 +20,6 @@ build_opengl: wrapp wasi-sdk-22
 
 build_gears: wrapp wasi-sdk-22
 	cd gears && $(MAKE)
+
+build_glfw: wrapp wasi-sdk-22
+	cd glfw && $(MAKE)

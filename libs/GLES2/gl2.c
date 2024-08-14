@@ -1,5 +1,6 @@
-
 #include <GLES2/gl2.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 // clang-format off
 
@@ -572,14 +573,6 @@ void glGetShaderiv(unsigned int shader, unsigned int pname, int * params) {
     imported_glGetShaderiv(shader, pname, params);
 }
         
-__attribute__((import_name("glGetString")))
-__attribute__((import_module("webrogue_gl")))
-unsigned char const* imported_glGetString(unsigned int name);
-
-unsigned char const* glGetString(unsigned int name) {
-    return imported_glGetString(name);
-}
-        
 __attribute__((import_name("glGetTexParameterfv")))
 __attribute__((import_module("webrogue_gl")))
 void imported_glGetTexParameterfv(unsigned int target, unsigned int pname, float * params);
@@ -1140,3 +1133,20 @@ void glViewport(int x, int y, int width, int height) {
     imported_glViewport(x, y, width, height);
 }
         
+
+__attribute__((import_name("glGetStringData")))
+__attribute__((import_module("webrogue_gl")))
+void imported_glGetStringData(unsigned int name, unsigned char * data_ptr);
+
+__attribute__((import_name("glGetStringLen")))
+__attribute__((import_module("webrogue_gl")))
+unsigned int imported_glGetStringLen(unsigned int name);
+
+// TODO fix memory leak here
+const GLubyte * glGetString (GLenum name) {
+    unsigned int len = imported_glGetStringLen(name);
+    if(!len) return NULL;
+    GLubyte * data = malloc(len);
+    imported_glGetStringData(name, data);
+    return data;
+}
