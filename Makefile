@@ -1,4 +1,4 @@
-all: build_wrapp build_simple build_opengl build_gears build_glfw
+all: build_wrapp build_simple build_opengl build_gears build_glfw build_raylib
 
 # utility
 build_wrapp:
@@ -23,3 +23,6 @@ build_gears: wrapp wasi-sdk-22
 
 build_glfw: wrapp wasi-sdk-22
 	cd glfw && $(MAKE)
+
+build_raylib: wrapp wasi-sdk-22
+	cd raylib && $(MAKE)
