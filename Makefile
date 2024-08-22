@@ -7,22 +7,34 @@ build_wrapp:
 
 wrapp: build_wrapp
 
-wasi-sdk-22:
-	curl -L https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-22/wasi-sdk-22.0-linux.tar.gz | tar -xz
-	mv wasi-sdk-22.0 wasi-sdk-22
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+	WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-x86_64-linux.tar.gz
+	WASI_SDK_DIR_NAME = wasi-sdk-24.0-x86_64-linux
+endif
+ifeq ($(UNAME_S),Darwin)
+	WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-x86_64-macos.tar.gz
+	WASI_SDK_DIR_NAME = wasi-sdk-24.0-x86_64-macos
+endif
+
+
+wasi-sdk-24:
+	curl -L $(WASI_SDK_URL) | tar -xz
+	mv $(WASI_SDK_DIR_NAME) wasi-sdk-24
 
 # apps
-build_simple: wrapp wasi-sdk-22
+build_simple: wrapp wasi-sdk-24
 	cd simple && $(MAKE)
 
-build_opengl: wrapp wasi-sdk-22
+build_opengl: wrapp wasi-sdk-24
 	cd opengl && $(MAKE)
 
-build_gears: wrapp wasi-sdk-22
+build_gears: wrapp wasi-sdk-24
 	cd gears && $(MAKE)
 
-build_glfw: wrapp wasi-sdk-22
+build_glfw: wrapp wasi-sdk-24
 	cd glfw && $(MAKE)
 
-build_raylib: wrapp wasi-sdk-22
+build_raylib: wrapp wasi-sdk-24
 	cd raylib && $(MAKE)
