@@ -4,7 +4,16 @@
 
 // clang-format off
 
+__attribute__((import_name("init_ptrs")))
+__attribute__((import_module("webrogue_gl"))) void
+imported_init_ptrs();
+
 void* webrogueGLLoader(const char* procname) {
+  static char loaded = 0;
+  if(!loaded) {
+    imported_init_ptrs();
+    loaded = 1;
+  }
   if (strcmp(procname, "glActiveTexture") == 0)
     return (void *)glActiveTexture;
   if (strcmp(procname, "glAttachShader") == 0)
