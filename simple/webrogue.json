@@ -1,0 +1,22 @@
+{
+    "filesystem": {
+        "dirs": [
+            {
+                "type": "resources",
+                "name": "embedded_dir",
+                "path": "/embedded"
+            }
+        ],
+        "resources": [
+            {
+                "real_path": "test_file.txt",
+                "dirs": [
+                    {
+                        "name": "embedded_dir",
+                        "path": "embedded_test_file.txt"
+                    }
+                ]
+            }
+        ]
+    }
+}
