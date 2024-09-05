@@ -667,6 +667,11 @@ static const char fragment_shader[] = "#ifdef GL_ES\n"
                                       "    gl_FragColor = Color;\n"
                                       "}";
 
+
+__attribute__((import_name("init_ptrs")))
+__attribute__((import_module("webrogue_gl"))) void
+imported_init_ptrs();
+
 static void gears_init(void) {
   GLuint v, f, program;
   const char *p;
@@ -745,6 +750,7 @@ int main(int argc, char *argv[]) {
   assert(Window);
   SDL_GLContext Context = SDL_GL_CreateContext(Window);
 #endif
+  imported_init_ptrs();
 
   gears_reshape(300, 300);
 
