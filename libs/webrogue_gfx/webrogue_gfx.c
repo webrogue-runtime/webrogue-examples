@@ -25,3 +25,15 @@ void webrogue_gfx_window_size(int * width, int * height) {
     *height = imported_webrogue_gfx_get_window_height();
 }
 
+__attribute__((import_name("get_gl_width")))
+__attribute__((import_module("webrogue_gfx"))) uint32_t
+imported_webrogue_gfx_get_gl_width();
+
+__attribute__((import_name("get_gl_height")))
+__attribute__((import_module("webrogue_gfx"))) uint32_t
+imported_webrogue_gfx_get_gl_height();
+
+void webrogue_gfx_gl_size(int * width, int * height) {
+    *width = imported_webrogue_gfx_get_gl_width();
+    *height = imported_webrogue_gfx_get_gl_height();
+}
