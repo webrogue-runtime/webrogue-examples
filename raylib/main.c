@@ -40,7 +40,7 @@ int main()
     // Specify the amount of blocks in each direction
     const int numBlocks = 15;
 
-    SetTargetFPS(60);
+    SetTargetFPS(600);
     //--------------------------------------------------------------------------------------
 
     // Main game loop
