@@ -1,4 +1,6 @@
 #include <GLES2/gl2.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GLES2/gl2ext.h>
 #include <stddef.h>
 #include <string.h>
 
@@ -28,6 +30,8 @@ void* webrogueGLLoader(const char* procname) {
     return (void *)glBindRenderbuffer;
   if (strcmp(procname, "glBindTexture") == 0)
     return (void *)glBindTexture;
+  if (strcmp(procname, "glBindVertexArrayOES") == 0)
+    return (void *)glBindVertexArrayOES;
   if (strcmp(procname, "glBlendColor") == 0)
     return (void *)glBlendColor;
   if (strcmp(procname, "glBlendEquation") == 0)
@@ -82,6 +86,8 @@ void* webrogueGLLoader(const char* procname) {
     return (void *)glDeleteShader;
   if (strcmp(procname, "glDeleteTextures") == 0)
     return (void *)glDeleteTextures;
+  if (strcmp(procname, "glDeleteVertexArraysOES") == 0)
+    return (void *)glDeleteVertexArraysOES;
   if (strcmp(procname, "glDepthFunc") == 0)
     return (void *)glDepthFunc;
   if (strcmp(procname, "glDepthMask") == 0)
@@ -120,6 +126,8 @@ void* webrogueGLLoader(const char* procname) {
     return (void *)glGenRenderbuffers;
   if (strcmp(procname, "glGenTextures") == 0)
     return (void *)glGenTextures;
+  if (strcmp(procname, "glGenVertexArraysOES") == 0)
+    return (void *)glGenVertexArraysOES;
   if (strcmp(procname, "glGenerateMipmap") == 0)
     return (void *)glGenerateMipmap;
   if (strcmp(procname, "glGetActiveAttrib") == 0)
@@ -190,6 +198,8 @@ void* webrogueGLLoader(const char* procname) {
     return (void *)glIsShader;
   if (strcmp(procname, "glIsTexture") == 0)
     return (void *)glIsTexture;
+  if (strcmp(procname, "glIsVertexArrayOES") == 0)
+    return (void *)glIsVertexArrayOES;
   if (strcmp(procname, "glLineWidth") == 0)
     return (void *)glLineWidth;
   if (strcmp(procname, "glLinkProgram") == 0)

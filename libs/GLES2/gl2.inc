@@ -55,6 +55,14 @@ void glBindTexture(unsigned int target, unsigned int texture) {
     imported_glBindTexture(target, texture);
 }
         
+__attribute__((import_name("glBindVertexArrayOES")))
+__attribute__((import_module("webrogue_gl")))
+void imported_glBindVertexArrayOES(unsigned int array);
+
+void glBindVertexArrayOES(unsigned int array) {
+    imported_glBindVertexArrayOES(array);
+}
+        
 __attribute__((import_name("glBlendColor")))
 __attribute__((import_module("webrogue_gl")))
 void imported_glBlendColor(float red, float green, float blue, float alpha);
@@ -271,6 +279,14 @@ void glDeleteTextures(int n, unsigned int const* textures) {
     imported_glDeleteTextures(n, textures);
 }
         
+__attribute__((import_name("glDeleteVertexArraysOES")))
+__attribute__((import_module("webrogue_gl")))
+void imported_glDeleteVertexArraysOES(int n, unsigned int const* arrays);
+
+void glDeleteVertexArraysOES(int n, unsigned int const* arrays) {
+    imported_glDeleteVertexArraysOES(n, arrays);
+}
+        
 __attribute__((import_name("glDepthFunc")))
 __attribute__((import_module("webrogue_gl")))
 void imported_glDepthFunc(unsigned int func);
@@ -421,6 +437,14 @@ void imported_glGenTextures(int n, unsigned int * textures);
 
 void glGenTextures(int n, unsigned int * textures) {
     imported_glGenTextures(n, textures);
+}
+        
+__attribute__((import_name("glGenVertexArraysOES")))
+__attribute__((import_module("webrogue_gl")))
+void imported_glGenVertexArraysOES(int n, unsigned int * arrays);
+
+void glGenVertexArraysOES(int n, unsigned int * arrays) {
+    imported_glGenVertexArraysOES(n, arrays);
 }
         
 __attribute__((import_name("glGenerateMipmap")))
@@ -693,6 +717,14 @@ unsigned char imported_glIsTexture(unsigned int texture);
 
 unsigned char glIsTexture(unsigned int texture) {
     return imported_glIsTexture(texture);
+}
+        
+__attribute__((import_name("glIsVertexArrayOES")))
+__attribute__((import_module("webrogue_gl")))
+unsigned char imported_glIsVertexArrayOES(unsigned int array);
+
+unsigned char glIsVertexArrayOES(unsigned int array) {
+    return imported_glIsVertexArrayOES(array);
 }
         
 __attribute__((import_name("glLineWidth")))
