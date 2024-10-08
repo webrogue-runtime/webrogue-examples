@@ -11,5 +11,5 @@ BUILD:
 
 main.wasm: BUILD
 
-glfw.wrapp: main.wasm ../wrapp
+glfw.wrapp: main.wasm ../wrapp webrogue.json
 	../wrapp . glfw.wrapp
