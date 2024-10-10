@@ -7,26 +7,26 @@
 
 __attribute__((import_name("glGetStringData")))
 __attribute__((import_module("webrogue_gl"))) void
-imported_glGetStringData(unsigned int name, unsigned char *data_ptr);
+imported_glGetStringData(int i, unsigned int name, unsigned char *data_ptr);
 
 __attribute__((import_name("glGetStringLen")))
 __attribute__((import_module("webrogue_gl"))) int
-imported_glGetStringLen(unsigned int name);
+imported_glGetStringLen(int i, unsigned int name);
 
 struct StrList {
   struct StrList *next;
   GLubyte *str;
 };
 
-const GLubyte *glGetString(GLenum name) {
-  int len = imported_glGetStringLen(name);
+static const GLubyte *glGetString_impl(int i, GLenum name) {
+  int len = imported_glGetStringLen(-1, name);
   if (len == -1) {
     return NULL;
   }
   if (!len)
     return (const GLubyte *)"";
   GLubyte *data = malloc(len);
-  imported_glGetStringData(name, data);
+  imported_glGetStringData(-1, name, data);
   static struct StrList *stored_strings = NULL;
   struct StrList *current_str = stored_strings;
   while (current_str) {
@@ -52,3 +52,10 @@ const GLubyte *glGetString(GLenum name) {
     current_str = current_str->next;
   }
 }
+
+const GLubyte *glGetString(GLenum name) { return glGetString_impl(-1, name); }
+const GLubyte *glGetStringi(GLenum name, GLuint index) {
+  return glGetString_impl(index, name);
+}
+
+// TODO glGetStringi
