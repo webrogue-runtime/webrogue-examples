@@ -2,16 +2,23 @@ all: build_wrapp build_simple build_opengl build_gears build_glfw build_raylib
 
 # utility
 build_wrapp:
-	cargo build --release --manifest-path ../crates/wrapp_cli/Cargo.toml
-	cp ../crates/wrapp_cli/target/release/webrogue_wrapp_cli wrapp
+	cargo build --release --manifest-path ../Cargo.toml --target-dir ../target --package webrogue_wrapp_cli
+	cp ../target/release/webrogue_wrapp_cli wrapp
 
 wrapp: build_wrapp
 
 UNAME_S := $(shell uname -s)
+UNAME_M := $(shell uname -m)
 
 ifeq ($(UNAME_S),Linux)
-	WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-x86_64-linux.tar.gz
-	WASI_SDK_DIR_NAME = wasi-sdk-24.0-x86_64-linux
+	ifeq ($(UNAME_M),x86_64)
+		WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-x86_64-linux.tar.gz
+		WASI_SDK_DIR_NAME = wasi-sdk-24.0-x86_64-linux
+	endif
+	ifeq ($(UNAME_M),aarch64)
+		WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-arm64-linux.tar.gz
+		WASI_SDK_DIR_NAME = wasi-sdk-24.0-arm64-linux
+	endif
 endif
 ifeq ($(UNAME_S),Darwin)
 	WASI_SDK_URL = https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-x86_64-macos.tar.gz
