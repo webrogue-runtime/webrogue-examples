@@ -2,8 +2,8 @@ all: build_wrapp build_simple build_opengl build_gears build_glfw build_raylib
 
 # utility
 build_wrapp:
-	cargo build --release --manifest-path ../Cargo.toml --target-dir ../target --package webrogue_wrapp_cli
-	cp ../target/release/webrogue_wrapp_cli wrapp
+	cargo build --release --manifest-path ../Cargo.toml --target-dir ../target --package webrogue-wrapp-cli
+	cp ../target/release/webrogue-wrapp-cli wrapp
 
 wrapp: build_wrapp
 
