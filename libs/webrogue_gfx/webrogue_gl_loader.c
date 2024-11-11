@@ -7,8 +7,8 @@
 
 // clang-format off
 
-__attribute__((import_name("init_ptrs")))
-__attribute__((import_module("webrogue_gl"))) void
+__attribute__((import_name("init-ptrs")))
+__attribute__((import_module("webrogue-gl"))) void
 imported_init_ptrs();
 
 void* webrogueGLLoader(const char* procname) {

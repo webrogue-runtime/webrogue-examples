@@ -1,6 +1,6 @@
 
 __attribute__((import_name("glActiveTexture")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glActiveTexture(unsigned int texture);
 
 void glActiveTexture(unsigned int texture) {
@@ -8,7 +8,7 @@ void glActiveTexture(unsigned int texture) {
 }
         
 __attribute__((import_name("glAttachShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glAttachShader(unsigned int program, unsigned int shader);
 
 void glAttachShader(unsigned int program, unsigned int shader) {
@@ -16,7 +16,7 @@ void glAttachShader(unsigned int program, unsigned int shader) {
 }
         
 __attribute__((import_name("glBeginQuery")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBeginQuery(unsigned int target, unsigned int id);
 
 void glBeginQuery(unsigned int target, unsigned int id) {
@@ -24,7 +24,7 @@ void glBeginQuery(unsigned int target, unsigned int id) {
 }
         
 __attribute__((import_name("glBeginTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBeginTransformFeedback(unsigned int primitiveMode);
 
 void glBeginTransformFeedback(unsigned int primitiveMode) {
@@ -32,7 +32,7 @@ void glBeginTransformFeedback(unsigned int primitiveMode) {
 }
         
 __attribute__((import_name("glBindAttribLocation")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindAttribLocation(unsigned int program, unsigned int index, char const* name);
 
 void glBindAttribLocation(unsigned int program, unsigned int index, char const* name) {
@@ -40,7 +40,7 @@ void glBindAttribLocation(unsigned int program, unsigned int index, char const* 
 }
         
 __attribute__((import_name("glBindBuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindBuffer(unsigned int target, unsigned int buffer);
 
 void glBindBuffer(unsigned int target, unsigned int buffer) {
@@ -48,7 +48,7 @@ void glBindBuffer(unsigned int target, unsigned int buffer) {
 }
         
 __attribute__((import_name("glBindBufferBase")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindBufferBase(unsigned int target, unsigned int index, unsigned int buffer);
 
 void glBindBufferBase(unsigned int target, unsigned int index, unsigned int buffer) {
@@ -56,7 +56,7 @@ void glBindBufferBase(unsigned int target, unsigned int index, unsigned int buff
 }
         
 __attribute__((import_name("glBindBufferRange")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindBufferRange(unsigned int target, unsigned int index, unsigned int buffer, signed long int offset, signed long int size);
 
 void glBindBufferRange(unsigned int target, unsigned int index, unsigned int buffer, signed long int offset, signed long int size) {
@@ -64,7 +64,7 @@ void glBindBufferRange(unsigned int target, unsigned int index, unsigned int buf
 }
         
 __attribute__((import_name("glBindFramebuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindFramebuffer(unsigned int target, unsigned int framebuffer);
 
 void glBindFramebuffer(unsigned int target, unsigned int framebuffer) {
@@ -72,7 +72,7 @@ void glBindFramebuffer(unsigned int target, unsigned int framebuffer) {
 }
         
 __attribute__((import_name("glBindRenderbuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindRenderbuffer(unsigned int target, unsigned int renderbuffer);
 
 void glBindRenderbuffer(unsigned int target, unsigned int renderbuffer) {
@@ -80,7 +80,7 @@ void glBindRenderbuffer(unsigned int target, unsigned int renderbuffer) {
 }
         
 __attribute__((import_name("glBindSampler")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindSampler(unsigned int unit, unsigned int sampler);
 
 void glBindSampler(unsigned int unit, unsigned int sampler) {
@@ -88,7 +88,7 @@ void glBindSampler(unsigned int unit, unsigned int sampler) {
 }
         
 __attribute__((import_name("glBindTexture")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindTexture(unsigned int target, unsigned int texture);
 
 void glBindTexture(unsigned int target, unsigned int texture) {
@@ -96,7 +96,7 @@ void glBindTexture(unsigned int target, unsigned int texture) {
 }
         
 __attribute__((import_name("glBindTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindTransformFeedback(unsigned int target, unsigned int id);
 
 void glBindTransformFeedback(unsigned int target, unsigned int id) {
@@ -104,7 +104,7 @@ void glBindTransformFeedback(unsigned int target, unsigned int id) {
 }
         
 __attribute__((import_name("glBindVertexArray")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindVertexArray(unsigned int array);
 
 void glBindVertexArray(unsigned int array) {
@@ -112,7 +112,7 @@ void glBindVertexArray(unsigned int array) {
 }
         
 __attribute__((import_name("glBindVertexArrayOES")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBindVertexArrayOES(unsigned int array);
 
 void glBindVertexArrayOES(unsigned int array) {
@@ -120,7 +120,7 @@ void glBindVertexArrayOES(unsigned int array) {
 }
         
 __attribute__((import_name("glBlendColor")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlendColor(float red, float green, float blue, float alpha);
 
 void glBlendColor(float red, float green, float blue, float alpha) {
@@ -128,7 +128,7 @@ void glBlendColor(float red, float green, float blue, float alpha) {
 }
         
 __attribute__((import_name("glBlendEquation")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlendEquation(unsigned int mode);
 
 void glBlendEquation(unsigned int mode) {
@@ -136,7 +136,7 @@ void glBlendEquation(unsigned int mode) {
 }
         
 __attribute__((import_name("glBlendEquationSeparate")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlendEquationSeparate(unsigned int modeRGB, unsigned int modeAlpha);
 
 void glBlendEquationSeparate(unsigned int modeRGB, unsigned int modeAlpha) {
@@ -144,7 +144,7 @@ void glBlendEquationSeparate(unsigned int modeRGB, unsigned int modeAlpha) {
 }
         
 __attribute__((import_name("glBlendFunc")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlendFunc(unsigned int sfactor, unsigned int dfactor);
 
 void glBlendFunc(unsigned int sfactor, unsigned int dfactor) {
@@ -152,7 +152,7 @@ void glBlendFunc(unsigned int sfactor, unsigned int dfactor) {
 }
         
 __attribute__((import_name("glBlendFuncSeparate")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlendFuncSeparate(unsigned int sfactorRGB, unsigned int dfactorRGB, unsigned int sfactorAlpha, unsigned int dfactorAlpha);
 
 void glBlendFuncSeparate(unsigned int sfactorRGB, unsigned int dfactorRGB, unsigned int sfactorAlpha, unsigned int dfactorAlpha) {
@@ -160,7 +160,7 @@ void glBlendFuncSeparate(unsigned int sfactorRGB, unsigned int dfactorRGB, unsig
 }
         
 __attribute__((import_name("glBlitFramebuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, unsigned int mask, unsigned int filter);
 
 void glBlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, unsigned int mask, unsigned int filter) {
@@ -168,7 +168,7 @@ void glBlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, in
 }
         
 __attribute__((import_name("glBufferData")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBufferData(unsigned int target, signed long int size, void const* data, unsigned int usage);
 
 void glBufferData(unsigned int target, signed long int size, void const* data, unsigned int usage) {
@@ -176,7 +176,7 @@ void glBufferData(unsigned int target, signed long int size, void const* data, u
 }
         
 __attribute__((import_name("glBufferSubData")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glBufferSubData(unsigned int target, signed long int offset, signed long int size, void const* data);
 
 void glBufferSubData(unsigned int target, signed long int offset, signed long int size, void const* data) {
@@ -184,7 +184,7 @@ void glBufferSubData(unsigned int target, signed long int offset, signed long in
 }
         
 __attribute__((import_name("glCheckFramebufferStatus")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glCheckFramebufferStatus(unsigned int target);
 
 unsigned int glCheckFramebufferStatus(unsigned int target) {
@@ -192,7 +192,7 @@ unsigned int glCheckFramebufferStatus(unsigned int target) {
 }
         
 __attribute__((import_name("glClear")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClear(unsigned int mask);
 
 void glClear(unsigned int mask) {
@@ -200,7 +200,7 @@ void glClear(unsigned int mask) {
 }
         
 __attribute__((import_name("glClearBufferfi")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearBufferfi(unsigned int buffer, int drawbuffer, float depth, int stencil);
 
 void glClearBufferfi(unsigned int buffer, int drawbuffer, float depth, int stencil) {
@@ -208,7 +208,7 @@ void glClearBufferfi(unsigned int buffer, int drawbuffer, float depth, int stenc
 }
         
 __attribute__((import_name("glClearBufferfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearBufferfv(unsigned int buffer, int drawbuffer, float const* value);
 
 void glClearBufferfv(unsigned int buffer, int drawbuffer, float const* value) {
@@ -216,7 +216,7 @@ void glClearBufferfv(unsigned int buffer, int drawbuffer, float const* value) {
 }
         
 __attribute__((import_name("glClearBufferiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearBufferiv(unsigned int buffer, int drawbuffer, int const* value);
 
 void glClearBufferiv(unsigned int buffer, int drawbuffer, int const* value) {
@@ -224,7 +224,7 @@ void glClearBufferiv(unsigned int buffer, int drawbuffer, int const* value) {
 }
         
 __attribute__((import_name("glClearBufferuiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearBufferuiv(unsigned int buffer, int drawbuffer, unsigned int const* value);
 
 void glClearBufferuiv(unsigned int buffer, int drawbuffer, unsigned int const* value) {
@@ -232,7 +232,7 @@ void glClearBufferuiv(unsigned int buffer, int drawbuffer, unsigned int const* v
 }
         
 __attribute__((import_name("glClearColor")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearColor(float red, float green, float blue, float alpha);
 
 void glClearColor(float red, float green, float blue, float alpha) {
@@ -240,7 +240,7 @@ void glClearColor(float red, float green, float blue, float alpha) {
 }
         
 __attribute__((import_name("glClearDepthf")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearDepthf(float d);
 
 void glClearDepthf(float d) {
@@ -248,7 +248,7 @@ void glClearDepthf(float d) {
 }
         
 __attribute__((import_name("glClearStencil")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glClearStencil(int s);
 
 void glClearStencil(int s) {
@@ -256,7 +256,7 @@ void glClearStencil(int s) {
 }
         
 __attribute__((import_name("glClientWaitSync")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glClientWaitSync(void* sync, unsigned int flags, uint64_t timeout);
 
 unsigned int glClientWaitSync(void* sync, unsigned int flags, uint64_t timeout) {
@@ -264,7 +264,7 @@ unsigned int glClientWaitSync(void* sync, unsigned int flags, uint64_t timeout) 
 }
         
 __attribute__((import_name("glColorMask")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glColorMask(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha);
 
 void glColorMask(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) {
@@ -272,7 +272,7 @@ void glColorMask(unsigned char red, unsigned char green, unsigned char blue, uns
 }
         
 __attribute__((import_name("glCompileShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCompileShader(unsigned int shader);
 
 void glCompileShader(unsigned int shader) {
@@ -280,7 +280,7 @@ void glCompileShader(unsigned int shader) {
 }
         
 __attribute__((import_name("glCompressedTexImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCompressedTexImage2D(unsigned int target, int level, unsigned int internalformat, int width, int height, int border, int imageSize, void const* data);
 
 void glCompressedTexImage2D(unsigned int target, int level, unsigned int internalformat, int width, int height, int border, int imageSize, void const* data) {
@@ -288,7 +288,7 @@ void glCompressedTexImage2D(unsigned int target, int level, unsigned int interna
 }
         
 __attribute__((import_name("glCompressedTexImage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCompressedTexImage3D(unsigned int target, int level, unsigned int internalformat, int width, int height, int depth, int border, int imageSize, void const* data);
 
 void glCompressedTexImage3D(unsigned int target, int level, unsigned int internalformat, int width, int height, int depth, int border, int imageSize, void const* data) {
@@ -296,7 +296,7 @@ void glCompressedTexImage3D(unsigned int target, int level, unsigned int interna
 }
         
 __attribute__((import_name("glCompressedTexSubImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCompressedTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, int imageSize, void const* data);
 
 void glCompressedTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, int imageSize, void const* data) {
@@ -304,7 +304,7 @@ void glCompressedTexSubImage2D(unsigned int target, int level, int xoffset, int 
 }
         
 __attribute__((import_name("glCompressedTexSubImage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCompressedTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, unsigned int format, int imageSize, void const* data);
 
 void glCompressedTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, unsigned int format, int imageSize, void const* data) {
@@ -312,7 +312,7 @@ void glCompressedTexSubImage3D(unsigned int target, int level, int xoffset, int 
 }
         
 __attribute__((import_name("glCopyBufferSubData")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCopyBufferSubData(unsigned int readTarget, unsigned int writeTarget, signed long int readOffset, signed long int writeOffset, signed long int size);
 
 void glCopyBufferSubData(unsigned int readTarget, unsigned int writeTarget, signed long int readOffset, signed long int writeOffset, signed long int size) {
@@ -320,7 +320,7 @@ void glCopyBufferSubData(unsigned int readTarget, unsigned int writeTarget, sign
 }
         
 __attribute__((import_name("glCopyTexImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCopyTexImage2D(unsigned int target, int level, unsigned int internalformat, int x, int y, int width, int height, int border);
 
 void glCopyTexImage2D(unsigned int target, int level, unsigned int internalformat, int x, int y, int width, int height, int border) {
@@ -328,7 +328,7 @@ void glCopyTexImage2D(unsigned int target, int level, unsigned int internalforma
 }
         
 __attribute__((import_name("glCopyTexSubImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCopyTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
 
 void glCopyTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int x, int y, int width, int height) {
@@ -336,7 +336,7 @@ void glCopyTexSubImage2D(unsigned int target, int level, int xoffset, int yoffse
 }
         
 __attribute__((import_name("glCopyTexSubImage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCopyTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height);
 
 void glCopyTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height) {
@@ -344,7 +344,7 @@ void glCopyTexSubImage3D(unsigned int target, int level, int xoffset, int yoffse
 }
         
 __attribute__((import_name("glCreateProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glCreateProgram();
 
 unsigned int glCreateProgram() {
@@ -352,7 +352,7 @@ unsigned int glCreateProgram() {
 }
         
 __attribute__((import_name("glCreateShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glCreateShader(unsigned int type);
 
 unsigned int glCreateShader(unsigned int type) {
@@ -360,7 +360,7 @@ unsigned int glCreateShader(unsigned int type) {
 }
         
 __attribute__((import_name("glCullFace")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glCullFace(unsigned int mode);
 
 void glCullFace(unsigned int mode) {
@@ -368,7 +368,7 @@ void glCullFace(unsigned int mode) {
 }
         
 __attribute__((import_name("glDeleteBuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteBuffers(int n, unsigned int const* buffers);
 
 void glDeleteBuffers(int n, unsigned int const* buffers) {
@@ -376,7 +376,7 @@ void glDeleteBuffers(int n, unsigned int const* buffers) {
 }
         
 __attribute__((import_name("glDeleteFramebuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteFramebuffers(int n, unsigned int const* framebuffers);
 
 void glDeleteFramebuffers(int n, unsigned int const* framebuffers) {
@@ -384,7 +384,7 @@ void glDeleteFramebuffers(int n, unsigned int const* framebuffers) {
 }
         
 __attribute__((import_name("glDeleteProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteProgram(unsigned int program);
 
 void glDeleteProgram(unsigned int program) {
@@ -392,7 +392,7 @@ void glDeleteProgram(unsigned int program) {
 }
         
 __attribute__((import_name("glDeleteQueries")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteQueries(int n, unsigned int const* ids);
 
 void glDeleteQueries(int n, unsigned int const* ids) {
@@ -400,7 +400,7 @@ void glDeleteQueries(int n, unsigned int const* ids) {
 }
         
 __attribute__((import_name("glDeleteRenderbuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteRenderbuffers(int n, unsigned int const* renderbuffers);
 
 void glDeleteRenderbuffers(int n, unsigned int const* renderbuffers) {
@@ -408,7 +408,7 @@ void glDeleteRenderbuffers(int n, unsigned int const* renderbuffers) {
 }
         
 __attribute__((import_name("glDeleteSamplers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteSamplers(int count, unsigned int const* samplers);
 
 void glDeleteSamplers(int count, unsigned int const* samplers) {
@@ -416,7 +416,7 @@ void glDeleteSamplers(int count, unsigned int const* samplers) {
 }
         
 __attribute__((import_name("glDeleteShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteShader(unsigned int shader);
 
 void glDeleteShader(unsigned int shader) {
@@ -424,7 +424,7 @@ void glDeleteShader(unsigned int shader) {
 }
         
 __attribute__((import_name("glDeleteSync")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteSync(void* sync);
 
 void glDeleteSync(void* sync) {
@@ -432,7 +432,7 @@ void glDeleteSync(void* sync) {
 }
         
 __attribute__((import_name("glDeleteTextures")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteTextures(int n, unsigned int const* textures);
 
 void glDeleteTextures(int n, unsigned int const* textures) {
@@ -440,7 +440,7 @@ void glDeleteTextures(int n, unsigned int const* textures) {
 }
         
 __attribute__((import_name("glDeleteTransformFeedbacks")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteTransformFeedbacks(int n, unsigned int const* ids);
 
 void glDeleteTransformFeedbacks(int n, unsigned int const* ids) {
@@ -448,7 +448,7 @@ void glDeleteTransformFeedbacks(int n, unsigned int const* ids) {
 }
         
 __attribute__((import_name("glDeleteVertexArrays")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteVertexArrays(int n, unsigned int const* arrays);
 
 void glDeleteVertexArrays(int n, unsigned int const* arrays) {
@@ -456,7 +456,7 @@ void glDeleteVertexArrays(int n, unsigned int const* arrays) {
 }
         
 __attribute__((import_name("glDeleteVertexArraysOES")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDeleteVertexArraysOES(int n, unsigned int const* arrays);
 
 void glDeleteVertexArraysOES(int n, unsigned int const* arrays) {
@@ -464,7 +464,7 @@ void glDeleteVertexArraysOES(int n, unsigned int const* arrays) {
 }
         
 __attribute__((import_name("glDepthFunc")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDepthFunc(unsigned int func);
 
 void glDepthFunc(unsigned int func) {
@@ -472,7 +472,7 @@ void glDepthFunc(unsigned int func) {
 }
         
 __attribute__((import_name("glDepthMask")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDepthMask(unsigned char flag);
 
 void glDepthMask(unsigned char flag) {
@@ -480,7 +480,7 @@ void glDepthMask(unsigned char flag) {
 }
         
 __attribute__((import_name("glDepthRangef")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDepthRangef(float n, float f);
 
 void glDepthRangef(float n, float f) {
@@ -488,7 +488,7 @@ void glDepthRangef(float n, float f) {
 }
         
 __attribute__((import_name("glDetachShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDetachShader(unsigned int program, unsigned int shader);
 
 void glDetachShader(unsigned int program, unsigned int shader) {
@@ -496,7 +496,7 @@ void glDetachShader(unsigned int program, unsigned int shader) {
 }
         
 __attribute__((import_name("glDisable")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDisable(unsigned int cap);
 
 void glDisable(unsigned int cap) {
@@ -504,7 +504,7 @@ void glDisable(unsigned int cap) {
 }
         
 __attribute__((import_name("glDisableVertexAttribArray")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDisableVertexAttribArray(unsigned int index);
 
 void glDisableVertexAttribArray(unsigned int index) {
@@ -512,7 +512,7 @@ void glDisableVertexAttribArray(unsigned int index) {
 }
         
 __attribute__((import_name("glDrawArrays")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawArrays(unsigned int mode, int first, int count);
 
 void glDrawArrays(unsigned int mode, int first, int count) {
@@ -520,7 +520,7 @@ void glDrawArrays(unsigned int mode, int first, int count) {
 }
         
 __attribute__((import_name("glDrawArraysInstanced")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawArraysInstanced(unsigned int mode, int first, int count, int instancecount);
 
 void glDrawArraysInstanced(unsigned int mode, int first, int count, int instancecount) {
@@ -528,7 +528,7 @@ void glDrawArraysInstanced(unsigned int mode, int first, int count, int instance
 }
         
 __attribute__((import_name("glDrawBuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawBuffers(int n, unsigned int const* bufs);
 
 void glDrawBuffers(int n, unsigned int const* bufs) {
@@ -536,7 +536,7 @@ void glDrawBuffers(int n, unsigned int const* bufs) {
 }
         
 __attribute__((import_name("glDrawElements")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawElements(unsigned int mode, int count, unsigned int type, void const* indices);
 
 void glDrawElements(unsigned int mode, int count, unsigned int type, void const* indices) {
@@ -544,7 +544,7 @@ void glDrawElements(unsigned int mode, int count, unsigned int type, void const*
 }
         
 __attribute__((import_name("glDrawElementsInstanced")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawElementsInstanced(unsigned int mode, int count, unsigned int type, void const* indices, int instancecount);
 
 void glDrawElementsInstanced(unsigned int mode, int count, unsigned int type, void const* indices, int instancecount) {
@@ -552,7 +552,7 @@ void glDrawElementsInstanced(unsigned int mode, int count, unsigned int type, vo
 }
         
 __attribute__((import_name("glDrawRangeElements")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glDrawRangeElements(unsigned int mode, unsigned int start, unsigned int end, int count, unsigned int type, void const* indices);
 
 void glDrawRangeElements(unsigned int mode, unsigned int start, unsigned int end, int count, unsigned int type, void const* indices) {
@@ -560,7 +560,7 @@ void glDrawRangeElements(unsigned int mode, unsigned int start, unsigned int end
 }
         
 __attribute__((import_name("glEnable")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glEnable(unsigned int cap);
 
 void glEnable(unsigned int cap) {
@@ -568,7 +568,7 @@ void glEnable(unsigned int cap) {
 }
         
 __attribute__((import_name("glEnableVertexAttribArray")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glEnableVertexAttribArray(unsigned int index);
 
 void glEnableVertexAttribArray(unsigned int index) {
@@ -576,7 +576,7 @@ void glEnableVertexAttribArray(unsigned int index) {
 }
         
 __attribute__((import_name("glEndQuery")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glEndQuery(unsigned int target);
 
 void glEndQuery(unsigned int target) {
@@ -584,7 +584,7 @@ void glEndQuery(unsigned int target) {
 }
         
 __attribute__((import_name("glEndTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glEndTransformFeedback();
 
 void glEndTransformFeedback() {
@@ -592,7 +592,7 @@ void glEndTransformFeedback() {
 }
         
 __attribute__((import_name("glFenceSync")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void* imported_glFenceSync(unsigned int condition, unsigned int flags);
 
 void* glFenceSync(unsigned int condition, unsigned int flags) {
@@ -600,7 +600,7 @@ void* glFenceSync(unsigned int condition, unsigned int flags) {
 }
         
 __attribute__((import_name("glFinish")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFinish();
 
 void glFinish() {
@@ -608,7 +608,7 @@ void glFinish() {
 }
         
 __attribute__((import_name("glFlush")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFlush();
 
 void glFlush() {
@@ -616,7 +616,7 @@ void glFlush() {
 }
         
 __attribute__((import_name("glFlushMappedBufferRange")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFlushMappedBufferRange(unsigned int target, signed long int offset, signed long int length);
 
 void glFlushMappedBufferRange(unsigned int target, signed long int offset, signed long int length) {
@@ -624,7 +624,7 @@ void glFlushMappedBufferRange(unsigned int target, signed long int offset, signe
 }
         
 __attribute__((import_name("glFramebufferRenderbuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFramebufferRenderbuffer(unsigned int target, unsigned int attachment, unsigned int renderbuffertarget, unsigned int renderbuffer);
 
 void glFramebufferRenderbuffer(unsigned int target, unsigned int attachment, unsigned int renderbuffertarget, unsigned int renderbuffer) {
@@ -632,7 +632,7 @@ void glFramebufferRenderbuffer(unsigned int target, unsigned int attachment, uns
 }
         
 __attribute__((import_name("glFramebufferTexture2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFramebufferTexture2D(unsigned int target, unsigned int attachment, unsigned int textarget, unsigned int texture, int level);
 
 void glFramebufferTexture2D(unsigned int target, unsigned int attachment, unsigned int textarget, unsigned int texture, int level) {
@@ -640,7 +640,7 @@ void glFramebufferTexture2D(unsigned int target, unsigned int attachment, unsign
 }
         
 __attribute__((import_name("glFramebufferTextureLayer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFramebufferTextureLayer(unsigned int target, unsigned int attachment, unsigned int texture, int level, int layer);
 
 void glFramebufferTextureLayer(unsigned int target, unsigned int attachment, unsigned int texture, int level, int layer) {
@@ -648,7 +648,7 @@ void glFramebufferTextureLayer(unsigned int target, unsigned int attachment, uns
 }
         
 __attribute__((import_name("glFrontFace")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glFrontFace(unsigned int mode);
 
 void glFrontFace(unsigned int mode) {
@@ -656,7 +656,7 @@ void glFrontFace(unsigned int mode) {
 }
         
 __attribute__((import_name("glGenBuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenBuffers(int n, unsigned int * buffers);
 
 void glGenBuffers(int n, unsigned int * buffers) {
@@ -664,7 +664,7 @@ void glGenBuffers(int n, unsigned int * buffers) {
 }
         
 __attribute__((import_name("glGenFramebuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenFramebuffers(int n, unsigned int * framebuffers);
 
 void glGenFramebuffers(int n, unsigned int * framebuffers) {
@@ -672,7 +672,7 @@ void glGenFramebuffers(int n, unsigned int * framebuffers) {
 }
         
 __attribute__((import_name("glGenQueries")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenQueries(int n, unsigned int * ids);
 
 void glGenQueries(int n, unsigned int * ids) {
@@ -680,7 +680,7 @@ void glGenQueries(int n, unsigned int * ids) {
 }
         
 __attribute__((import_name("glGenRenderbuffers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenRenderbuffers(int n, unsigned int * renderbuffers);
 
 void glGenRenderbuffers(int n, unsigned int * renderbuffers) {
@@ -688,7 +688,7 @@ void glGenRenderbuffers(int n, unsigned int * renderbuffers) {
 }
         
 __attribute__((import_name("glGenSamplers")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenSamplers(int count, unsigned int * samplers);
 
 void glGenSamplers(int count, unsigned int * samplers) {
@@ -696,7 +696,7 @@ void glGenSamplers(int count, unsigned int * samplers) {
 }
         
 __attribute__((import_name("glGenTextures")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenTextures(int n, unsigned int * textures);
 
 void glGenTextures(int n, unsigned int * textures) {
@@ -704,7 +704,7 @@ void glGenTextures(int n, unsigned int * textures) {
 }
         
 __attribute__((import_name("glGenTransformFeedbacks")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenTransformFeedbacks(int n, unsigned int * ids);
 
 void glGenTransformFeedbacks(int n, unsigned int * ids) {
@@ -712,7 +712,7 @@ void glGenTransformFeedbacks(int n, unsigned int * ids) {
 }
         
 __attribute__((import_name("glGenVertexArrays")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenVertexArrays(int n, unsigned int * arrays);
 
 void glGenVertexArrays(int n, unsigned int * arrays) {
@@ -720,7 +720,7 @@ void glGenVertexArrays(int n, unsigned int * arrays) {
 }
         
 __attribute__((import_name("glGenVertexArraysOES")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenVertexArraysOES(int n, unsigned int * arrays);
 
 void glGenVertexArraysOES(int n, unsigned int * arrays) {
@@ -728,7 +728,7 @@ void glGenVertexArraysOES(int n, unsigned int * arrays) {
 }
         
 __attribute__((import_name("glGenerateMipmap")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGenerateMipmap(unsigned int target);
 
 void glGenerateMipmap(unsigned int target) {
@@ -736,7 +736,7 @@ void glGenerateMipmap(unsigned int target) {
 }
         
 __attribute__((import_name("glGetActiveAttrib")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetActiveAttrib(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name);
 
 void glGetActiveAttrib(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name) {
@@ -744,7 +744,7 @@ void glGetActiveAttrib(unsigned int program, unsigned int index, int bufSize, in
 }
         
 __attribute__((import_name("glGetActiveUniform")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetActiveUniform(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name);
 
 void glGetActiveUniform(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name) {
@@ -752,7 +752,7 @@ void glGetActiveUniform(unsigned int program, unsigned int index, int bufSize, i
 }
         
 __attribute__((import_name("glGetActiveUniformBlockName")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetActiveUniformBlockName(unsigned int program, unsigned int uniformBlockIndex, int bufSize, int * length, char * uniformBlockName);
 
 void glGetActiveUniformBlockName(unsigned int program, unsigned int uniformBlockIndex, int bufSize, int * length, char * uniformBlockName) {
@@ -760,7 +760,7 @@ void glGetActiveUniformBlockName(unsigned int program, unsigned int uniformBlock
 }
         
 __attribute__((import_name("glGetActiveUniformBlockiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetActiveUniformBlockiv(unsigned int program, unsigned int uniformBlockIndex, unsigned int pname, int * params);
 
 void glGetActiveUniformBlockiv(unsigned int program, unsigned int uniformBlockIndex, unsigned int pname, int * params) {
@@ -768,7 +768,7 @@ void glGetActiveUniformBlockiv(unsigned int program, unsigned int uniformBlockIn
 }
         
 __attribute__((import_name("glGetActiveUniformsiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetActiveUniformsiv(unsigned int program, int uniformCount, unsigned int const* uniformIndices, unsigned int pname, int * params);
 
 void glGetActiveUniformsiv(unsigned int program, int uniformCount, unsigned int const* uniformIndices, unsigned int pname, int * params) {
@@ -776,7 +776,7 @@ void glGetActiveUniformsiv(unsigned int program, int uniformCount, unsigned int 
 }
         
 __attribute__((import_name("glGetAttachedShaders")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetAttachedShaders(unsigned int program, int maxCount, int * count, unsigned int * shaders);
 
 void glGetAttachedShaders(unsigned int program, int maxCount, int * count, unsigned int * shaders) {
@@ -784,7 +784,7 @@ void glGetAttachedShaders(unsigned int program, int maxCount, int * count, unsig
 }
         
 __attribute__((import_name("glGetAttribLocation")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 int imported_glGetAttribLocation(unsigned int program, char const* name);
 
 int glGetAttribLocation(unsigned int program, char const* name) {
@@ -792,7 +792,7 @@ int glGetAttribLocation(unsigned int program, char const* name) {
 }
         
 __attribute__((import_name("glGetBooleanv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetBooleanv(unsigned int pname, unsigned char * data);
 
 void glGetBooleanv(unsigned int pname, unsigned char * data) {
@@ -800,7 +800,7 @@ void glGetBooleanv(unsigned int pname, unsigned char * data) {
 }
         
 __attribute__((import_name("glGetBufferParameteri64v")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetBufferParameteri64v(unsigned int target, unsigned int pname, int64_t * params);
 
 void glGetBufferParameteri64v(unsigned int target, unsigned int pname, int64_t * params) {
@@ -808,7 +808,7 @@ void glGetBufferParameteri64v(unsigned int target, unsigned int pname, int64_t *
 }
         
 __attribute__((import_name("glGetBufferParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetBufferParameteriv(unsigned int target, unsigned int pname, int * params);
 
 void glGetBufferParameteriv(unsigned int target, unsigned int pname, int * params) {
@@ -816,7 +816,7 @@ void glGetBufferParameteriv(unsigned int target, unsigned int pname, int * param
 }
         
 __attribute__((import_name("glGetBufferPointerv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetBufferPointerv(unsigned int target, unsigned int pname, void * * params);
 
 void glGetBufferPointerv(unsigned int target, unsigned int pname, void * * params) {
@@ -824,7 +824,7 @@ void glGetBufferPointerv(unsigned int target, unsigned int pname, void * * param
 }
         
 __attribute__((import_name("glGetError")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glGetError();
 
 unsigned int glGetError() {
@@ -832,7 +832,7 @@ unsigned int glGetError() {
 }
         
 __attribute__((import_name("glGetFloatv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetFloatv(unsigned int pname, float * data);
 
 void glGetFloatv(unsigned int pname, float * data) {
@@ -840,7 +840,7 @@ void glGetFloatv(unsigned int pname, float * data) {
 }
         
 __attribute__((import_name("glGetFragDataLocation")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 int imported_glGetFragDataLocation(unsigned int program, char const* name);
 
 int glGetFragDataLocation(unsigned int program, char const* name) {
@@ -848,7 +848,7 @@ int glGetFragDataLocation(unsigned int program, char const* name) {
 }
         
 __attribute__((import_name("glGetFramebufferAttachmentParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetFramebufferAttachmentParameteriv(unsigned int target, unsigned int attachment, unsigned int pname, int * params);
 
 void glGetFramebufferAttachmentParameteriv(unsigned int target, unsigned int attachment, unsigned int pname, int * params) {
@@ -856,7 +856,7 @@ void glGetFramebufferAttachmentParameteriv(unsigned int target, unsigned int att
 }
         
 __attribute__((import_name("glGetInteger64i_v")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetInteger64i_v(unsigned int target, unsigned int index, int64_t * data);
 
 void glGetInteger64i_v(unsigned int target, unsigned int index, int64_t * data) {
@@ -864,7 +864,7 @@ void glGetInteger64i_v(unsigned int target, unsigned int index, int64_t * data) 
 }
         
 __attribute__((import_name("glGetInteger64v")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetInteger64v(unsigned int pname, int64_t * data);
 
 void glGetInteger64v(unsigned int pname, int64_t * data) {
@@ -872,7 +872,7 @@ void glGetInteger64v(unsigned int pname, int64_t * data) {
 }
         
 __attribute__((import_name("glGetIntegeri_v")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetIntegeri_v(unsigned int target, unsigned int index, int * data);
 
 void glGetIntegeri_v(unsigned int target, unsigned int index, int * data) {
@@ -880,7 +880,7 @@ void glGetIntegeri_v(unsigned int target, unsigned int index, int * data) {
 }
         
 __attribute__((import_name("glGetIntegerv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetIntegerv(unsigned int pname, int * data);
 
 void glGetIntegerv(unsigned int pname, int * data) {
@@ -888,7 +888,7 @@ void glGetIntegerv(unsigned int pname, int * data) {
 }
         
 __attribute__((import_name("glGetInternalformativ")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetInternalformativ(unsigned int target, unsigned int internalformat, unsigned int pname, int count, int * params);
 
 void glGetInternalformativ(unsigned int target, unsigned int internalformat, unsigned int pname, int count, int * params) {
@@ -896,7 +896,7 @@ void glGetInternalformativ(unsigned int target, unsigned int internalformat, uns
 }
         
 __attribute__((import_name("glGetProgramBinary")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetProgramBinary(unsigned int program, int bufSize, int * length, unsigned int * binaryFormat, void * binary);
 
 void glGetProgramBinary(unsigned int program, int bufSize, int * length, unsigned int * binaryFormat, void * binary) {
@@ -904,7 +904,7 @@ void glGetProgramBinary(unsigned int program, int bufSize, int * length, unsigne
 }
         
 __attribute__((import_name("glGetProgramInfoLog")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetProgramInfoLog(unsigned int program, int bufSize, int * length, char * infoLog);
 
 void glGetProgramInfoLog(unsigned int program, int bufSize, int * length, char * infoLog) {
@@ -912,7 +912,7 @@ void glGetProgramInfoLog(unsigned int program, int bufSize, int * length, char *
 }
         
 __attribute__((import_name("glGetProgramiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetProgramiv(unsigned int program, unsigned int pname, int * params);
 
 void glGetProgramiv(unsigned int program, unsigned int pname, int * params) {
@@ -920,7 +920,7 @@ void glGetProgramiv(unsigned int program, unsigned int pname, int * params) {
 }
         
 __attribute__((import_name("glGetQueryObjectuiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetQueryObjectuiv(unsigned int id, unsigned int pname, unsigned int * params);
 
 void glGetQueryObjectuiv(unsigned int id, unsigned int pname, unsigned int * params) {
@@ -928,7 +928,7 @@ void glGetQueryObjectuiv(unsigned int id, unsigned int pname, unsigned int * par
 }
         
 __attribute__((import_name("glGetQueryiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetQueryiv(unsigned int target, unsigned int pname, int * params);
 
 void glGetQueryiv(unsigned int target, unsigned int pname, int * params) {
@@ -936,7 +936,7 @@ void glGetQueryiv(unsigned int target, unsigned int pname, int * params) {
 }
         
 __attribute__((import_name("glGetRenderbufferParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetRenderbufferParameteriv(unsigned int target, unsigned int pname, int * params);
 
 void glGetRenderbufferParameteriv(unsigned int target, unsigned int pname, int * params) {
@@ -944,7 +944,7 @@ void glGetRenderbufferParameteriv(unsigned int target, unsigned int pname, int *
 }
         
 __attribute__((import_name("glGetSamplerParameterfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetSamplerParameterfv(unsigned int sampler, unsigned int pname, float * params);
 
 void glGetSamplerParameterfv(unsigned int sampler, unsigned int pname, float * params) {
@@ -952,7 +952,7 @@ void glGetSamplerParameterfv(unsigned int sampler, unsigned int pname, float * p
 }
         
 __attribute__((import_name("glGetSamplerParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetSamplerParameteriv(unsigned int sampler, unsigned int pname, int * params);
 
 void glGetSamplerParameteriv(unsigned int sampler, unsigned int pname, int * params) {
@@ -960,7 +960,7 @@ void glGetSamplerParameteriv(unsigned int sampler, unsigned int pname, int * par
 }
         
 __attribute__((import_name("glGetShaderInfoLog")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetShaderInfoLog(unsigned int shader, int bufSize, int * length, char * infoLog);
 
 void glGetShaderInfoLog(unsigned int shader, int bufSize, int * length, char * infoLog) {
@@ -968,7 +968,7 @@ void glGetShaderInfoLog(unsigned int shader, int bufSize, int * length, char * i
 }
         
 __attribute__((import_name("glGetShaderPrecisionFormat")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetShaderPrecisionFormat(unsigned int shadertype, unsigned int precisiontype, int * range, int * precision);
 
 void glGetShaderPrecisionFormat(unsigned int shadertype, unsigned int precisiontype, int * range, int * precision) {
@@ -976,7 +976,7 @@ void glGetShaderPrecisionFormat(unsigned int shadertype, unsigned int precisiont
 }
         
 __attribute__((import_name("glGetShaderSource")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetShaderSource(unsigned int shader, int bufSize, int * length, char * source);
 
 void glGetShaderSource(unsigned int shader, int bufSize, int * length, char * source) {
@@ -984,7 +984,7 @@ void glGetShaderSource(unsigned int shader, int bufSize, int * length, char * so
 }
         
 __attribute__((import_name("glGetShaderiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetShaderiv(unsigned int shader, unsigned int pname, int * params);
 
 void glGetShaderiv(unsigned int shader, unsigned int pname, int * params) {
@@ -992,7 +992,7 @@ void glGetShaderiv(unsigned int shader, unsigned int pname, int * params) {
 }
         
 __attribute__((import_name("glGetSynciv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetSynciv(void* sync, unsigned int pname, int count, int * length, int * values);
 
 void glGetSynciv(void* sync, unsigned int pname, int count, int * length, int * values) {
@@ -1000,7 +1000,7 @@ void glGetSynciv(void* sync, unsigned int pname, int count, int * length, int * 
 }
         
 __attribute__((import_name("glGetTexParameterfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetTexParameterfv(unsigned int target, unsigned int pname, float * params);
 
 void glGetTexParameterfv(unsigned int target, unsigned int pname, float * params) {
@@ -1008,7 +1008,7 @@ void glGetTexParameterfv(unsigned int target, unsigned int pname, float * params
 }
         
 __attribute__((import_name("glGetTexParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetTexParameteriv(unsigned int target, unsigned int pname, int * params);
 
 void glGetTexParameteriv(unsigned int target, unsigned int pname, int * params) {
@@ -1016,7 +1016,7 @@ void glGetTexParameteriv(unsigned int target, unsigned int pname, int * params) 
 }
         
 __attribute__((import_name("glGetTransformFeedbackVarying")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetTransformFeedbackVarying(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name);
 
 void glGetTransformFeedbackVarying(unsigned int program, unsigned int index, int bufSize, int * length, int * size, unsigned int * type, char * name) {
@@ -1024,7 +1024,7 @@ void glGetTransformFeedbackVarying(unsigned int program, unsigned int index, int
 }
         
 __attribute__((import_name("glGetUniformBlockIndex")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned int imported_glGetUniformBlockIndex(unsigned int program, char const* uniformBlockName);
 
 unsigned int glGetUniformBlockIndex(unsigned int program, char const* uniformBlockName) {
@@ -1032,7 +1032,7 @@ unsigned int glGetUniformBlockIndex(unsigned int program, char const* uniformBlo
 }
         
 __attribute__((import_name("glGetUniformIndices")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetUniformIndices(unsigned int program, int uniformCount, char const* const* uniformNames, unsigned int * uniformIndices);
 
 void glGetUniformIndices(unsigned int program, int uniformCount, char const* const* uniformNames, unsigned int * uniformIndices) {
@@ -1040,7 +1040,7 @@ void glGetUniformIndices(unsigned int program, int uniformCount, char const* con
 }
         
 __attribute__((import_name("glGetUniformLocation")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 int imported_glGetUniformLocation(unsigned int program, char const* name);
 
 int glGetUniformLocation(unsigned int program, char const* name) {
@@ -1048,7 +1048,7 @@ int glGetUniformLocation(unsigned int program, char const* name) {
 }
         
 __attribute__((import_name("glGetUniformfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetUniformfv(unsigned int program, int location, float * params);
 
 void glGetUniformfv(unsigned int program, int location, float * params) {
@@ -1056,7 +1056,7 @@ void glGetUniformfv(unsigned int program, int location, float * params) {
 }
         
 __attribute__((import_name("glGetUniformiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetUniformiv(unsigned int program, int location, int * params);
 
 void glGetUniformiv(unsigned int program, int location, int * params) {
@@ -1064,7 +1064,7 @@ void glGetUniformiv(unsigned int program, int location, int * params) {
 }
         
 __attribute__((import_name("glGetUniformuiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetUniformuiv(unsigned int program, int location, unsigned int * params);
 
 void glGetUniformuiv(unsigned int program, int location, unsigned int * params) {
@@ -1072,7 +1072,7 @@ void glGetUniformuiv(unsigned int program, int location, unsigned int * params) 
 }
         
 __attribute__((import_name("glGetVertexAttribIiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetVertexAttribIiv(unsigned int index, unsigned int pname, int * params);
 
 void glGetVertexAttribIiv(unsigned int index, unsigned int pname, int * params) {
@@ -1080,7 +1080,7 @@ void glGetVertexAttribIiv(unsigned int index, unsigned int pname, int * params) 
 }
         
 __attribute__((import_name("glGetVertexAttribIuiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetVertexAttribIuiv(unsigned int index, unsigned int pname, unsigned int * params);
 
 void glGetVertexAttribIuiv(unsigned int index, unsigned int pname, unsigned int * params) {
@@ -1088,7 +1088,7 @@ void glGetVertexAttribIuiv(unsigned int index, unsigned int pname, unsigned int 
 }
         
 __attribute__((import_name("glGetVertexAttribPointerv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetVertexAttribPointerv(unsigned int index, unsigned int pname, void * * pointer);
 
 void glGetVertexAttribPointerv(unsigned int index, unsigned int pname, void * * pointer) {
@@ -1096,7 +1096,7 @@ void glGetVertexAttribPointerv(unsigned int index, unsigned int pname, void * * 
 }
         
 __attribute__((import_name("glGetVertexAttribfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetVertexAttribfv(unsigned int index, unsigned int pname, float * params);
 
 void glGetVertexAttribfv(unsigned int index, unsigned int pname, float * params) {
@@ -1104,7 +1104,7 @@ void glGetVertexAttribfv(unsigned int index, unsigned int pname, float * params)
 }
         
 __attribute__((import_name("glGetVertexAttribiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glGetVertexAttribiv(unsigned int index, unsigned int pname, int * params);
 
 void glGetVertexAttribiv(unsigned int index, unsigned int pname, int * params) {
@@ -1112,7 +1112,7 @@ void glGetVertexAttribiv(unsigned int index, unsigned int pname, int * params) {
 }
         
 __attribute__((import_name("glHint")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glHint(unsigned int target, unsigned int mode);
 
 void glHint(unsigned int target, unsigned int mode) {
@@ -1120,7 +1120,7 @@ void glHint(unsigned int target, unsigned int mode) {
 }
         
 __attribute__((import_name("glInvalidateFramebuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glInvalidateFramebuffer(unsigned int target, int numAttachments, unsigned int const* attachments);
 
 void glInvalidateFramebuffer(unsigned int target, int numAttachments, unsigned int const* attachments) {
@@ -1128,7 +1128,7 @@ void glInvalidateFramebuffer(unsigned int target, int numAttachments, unsigned i
 }
         
 __attribute__((import_name("glInvalidateSubFramebuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glInvalidateSubFramebuffer(unsigned int target, int numAttachments, unsigned int const* attachments, int x, int y, int width, int height);
 
 void glInvalidateSubFramebuffer(unsigned int target, int numAttachments, unsigned int const* attachments, int x, int y, int width, int height) {
@@ -1136,7 +1136,7 @@ void glInvalidateSubFramebuffer(unsigned int target, int numAttachments, unsigne
 }
         
 __attribute__((import_name("glIsBuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsBuffer(unsigned int buffer);
 
 unsigned char glIsBuffer(unsigned int buffer) {
@@ -1144,7 +1144,7 @@ unsigned char glIsBuffer(unsigned int buffer) {
 }
         
 __attribute__((import_name("glIsEnabled")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsEnabled(unsigned int cap);
 
 unsigned char glIsEnabled(unsigned int cap) {
@@ -1152,7 +1152,7 @@ unsigned char glIsEnabled(unsigned int cap) {
 }
         
 __attribute__((import_name("glIsFramebuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsFramebuffer(unsigned int framebuffer);
 
 unsigned char glIsFramebuffer(unsigned int framebuffer) {
@@ -1160,7 +1160,7 @@ unsigned char glIsFramebuffer(unsigned int framebuffer) {
 }
         
 __attribute__((import_name("glIsProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsProgram(unsigned int program);
 
 unsigned char glIsProgram(unsigned int program) {
@@ -1168,7 +1168,7 @@ unsigned char glIsProgram(unsigned int program) {
 }
         
 __attribute__((import_name("glIsQuery")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsQuery(unsigned int id);
 
 unsigned char glIsQuery(unsigned int id) {
@@ -1176,7 +1176,7 @@ unsigned char glIsQuery(unsigned int id) {
 }
         
 __attribute__((import_name("glIsRenderbuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsRenderbuffer(unsigned int renderbuffer);
 
 unsigned char glIsRenderbuffer(unsigned int renderbuffer) {
@@ -1184,7 +1184,7 @@ unsigned char glIsRenderbuffer(unsigned int renderbuffer) {
 }
         
 __attribute__((import_name("glIsSampler")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsSampler(unsigned int sampler);
 
 unsigned char glIsSampler(unsigned int sampler) {
@@ -1192,7 +1192,7 @@ unsigned char glIsSampler(unsigned int sampler) {
 }
         
 __attribute__((import_name("glIsShader")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsShader(unsigned int shader);
 
 unsigned char glIsShader(unsigned int shader) {
@@ -1200,7 +1200,7 @@ unsigned char glIsShader(unsigned int shader) {
 }
         
 __attribute__((import_name("glIsSync")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsSync(void* sync);
 
 unsigned char glIsSync(void* sync) {
@@ -1208,7 +1208,7 @@ unsigned char glIsSync(void* sync) {
 }
         
 __attribute__((import_name("glIsTexture")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsTexture(unsigned int texture);
 
 unsigned char glIsTexture(unsigned int texture) {
@@ -1216,7 +1216,7 @@ unsigned char glIsTexture(unsigned int texture) {
 }
         
 __attribute__((import_name("glIsTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsTransformFeedback(unsigned int id);
 
 unsigned char glIsTransformFeedback(unsigned int id) {
@@ -1224,7 +1224,7 @@ unsigned char glIsTransformFeedback(unsigned int id) {
 }
         
 __attribute__((import_name("glIsVertexArray")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsVertexArray(unsigned int array);
 
 unsigned char glIsVertexArray(unsigned int array) {
@@ -1232,7 +1232,7 @@ unsigned char glIsVertexArray(unsigned int array) {
 }
         
 __attribute__((import_name("glIsVertexArrayOES")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glIsVertexArrayOES(unsigned int array);
 
 unsigned char glIsVertexArrayOES(unsigned int array) {
@@ -1240,7 +1240,7 @@ unsigned char glIsVertexArrayOES(unsigned int array) {
 }
         
 __attribute__((import_name("glLineWidth")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glLineWidth(float width);
 
 void glLineWidth(float width) {
@@ -1248,7 +1248,7 @@ void glLineWidth(float width) {
 }
         
 __attribute__((import_name("glLinkProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glLinkProgram(unsigned int program);
 
 void glLinkProgram(unsigned int program) {
@@ -1256,7 +1256,7 @@ void glLinkProgram(unsigned int program) {
 }
         
 __attribute__((import_name("glMapBufferRange")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void * imported_glMapBufferRange(unsigned int target, signed long int offset, signed long int length, unsigned int access);
 
 void * glMapBufferRange(unsigned int target, signed long int offset, signed long int length, unsigned int access) {
@@ -1264,7 +1264,7 @@ void * glMapBufferRange(unsigned int target, signed long int offset, signed long
 }
         
 __attribute__((import_name("glPauseTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glPauseTransformFeedback();
 
 void glPauseTransformFeedback() {
@@ -1272,7 +1272,7 @@ void glPauseTransformFeedback() {
 }
         
 __attribute__((import_name("glPixelStorei")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glPixelStorei(unsigned int pname, int param);
 
 void glPixelStorei(unsigned int pname, int param) {
@@ -1280,7 +1280,7 @@ void glPixelStorei(unsigned int pname, int param) {
 }
         
 __attribute__((import_name("glPolygonOffset")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glPolygonOffset(float factor, float units);
 
 void glPolygonOffset(float factor, float units) {
@@ -1288,7 +1288,7 @@ void glPolygonOffset(float factor, float units) {
 }
         
 __attribute__((import_name("glProgramBinary")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glProgramBinary(unsigned int program, unsigned int binaryFormat, void const* binary, int length);
 
 void glProgramBinary(unsigned int program, unsigned int binaryFormat, void const* binary, int length) {
@@ -1296,7 +1296,7 @@ void glProgramBinary(unsigned int program, unsigned int binaryFormat, void const
 }
         
 __attribute__((import_name("glProgramParameteri")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glProgramParameteri(unsigned int program, unsigned int pname, int value);
 
 void glProgramParameteri(unsigned int program, unsigned int pname, int value) {
@@ -1304,7 +1304,7 @@ void glProgramParameteri(unsigned int program, unsigned int pname, int value) {
 }
         
 __attribute__((import_name("glReadBuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glReadBuffer(unsigned int src);
 
 void glReadBuffer(unsigned int src) {
@@ -1312,7 +1312,7 @@ void glReadBuffer(unsigned int src) {
 }
         
 __attribute__((import_name("glReadPixels")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glReadPixels(int x, int y, int width, int height, unsigned int format, unsigned int type, void * pixels);
 
 void glReadPixels(int x, int y, int width, int height, unsigned int format, unsigned int type, void * pixels) {
@@ -1320,7 +1320,7 @@ void glReadPixels(int x, int y, int width, int height, unsigned int format, unsi
 }
         
 __attribute__((import_name("glReleaseShaderCompiler")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glReleaseShaderCompiler();
 
 void glReleaseShaderCompiler() {
@@ -1328,7 +1328,7 @@ void glReleaseShaderCompiler() {
 }
         
 __attribute__((import_name("glRenderbufferStorage")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glRenderbufferStorage(unsigned int target, unsigned int internalformat, int width, int height);
 
 void glRenderbufferStorage(unsigned int target, unsigned int internalformat, int width, int height) {
@@ -1336,7 +1336,7 @@ void glRenderbufferStorage(unsigned int target, unsigned int internalformat, int
 }
         
 __attribute__((import_name("glRenderbufferStorageMultisample")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glRenderbufferStorageMultisample(unsigned int target, int samples, unsigned int internalformat, int width, int height);
 
 void glRenderbufferStorageMultisample(unsigned int target, int samples, unsigned int internalformat, int width, int height) {
@@ -1344,7 +1344,7 @@ void glRenderbufferStorageMultisample(unsigned int target, int samples, unsigned
 }
         
 __attribute__((import_name("glResumeTransformFeedback")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glResumeTransformFeedback();
 
 void glResumeTransformFeedback() {
@@ -1352,7 +1352,7 @@ void glResumeTransformFeedback() {
 }
         
 __attribute__((import_name("glSampleCoverage")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glSampleCoverage(float value, unsigned char invert);
 
 void glSampleCoverage(float value, unsigned char invert) {
@@ -1360,7 +1360,7 @@ void glSampleCoverage(float value, unsigned char invert) {
 }
         
 __attribute__((import_name("glSamplerParameterf")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glSamplerParameterf(unsigned int sampler, unsigned int pname, float param);
 
 void glSamplerParameterf(unsigned int sampler, unsigned int pname, float param) {
@@ -1368,7 +1368,7 @@ void glSamplerParameterf(unsigned int sampler, unsigned int pname, float param) 
 }
         
 __attribute__((import_name("glSamplerParameterfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glSamplerParameterfv(unsigned int sampler, unsigned int pname, float const* param);
 
 void glSamplerParameterfv(unsigned int sampler, unsigned int pname, float const* param) {
@@ -1376,7 +1376,7 @@ void glSamplerParameterfv(unsigned int sampler, unsigned int pname, float const*
 }
         
 __attribute__((import_name("glSamplerParameteri")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glSamplerParameteri(unsigned int sampler, unsigned int pname, int param);
 
 void glSamplerParameteri(unsigned int sampler, unsigned int pname, int param) {
@@ -1384,7 +1384,7 @@ void glSamplerParameteri(unsigned int sampler, unsigned int pname, int param) {
 }
         
 __attribute__((import_name("glSamplerParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glSamplerParameteriv(unsigned int sampler, unsigned int pname, int const* param);
 
 void glSamplerParameteriv(unsigned int sampler, unsigned int pname, int const* param) {
@@ -1392,7 +1392,7 @@ void glSamplerParameteriv(unsigned int sampler, unsigned int pname, int const* p
 }
         
 __attribute__((import_name("glScissor")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glScissor(int x, int y, int width, int height);
 
 void glScissor(int x, int y, int width, int height) {
@@ -1400,7 +1400,7 @@ void glScissor(int x, int y, int width, int height) {
 }
         
 __attribute__((import_name("glShaderBinary")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glShaderBinary(int count, unsigned int const* shaders, unsigned int binaryFormat, void const* binary, int length);
 
 void glShaderBinary(int count, unsigned int const* shaders, unsigned int binaryFormat, void const* binary, int length) {
@@ -1408,7 +1408,7 @@ void glShaderBinary(int count, unsigned int const* shaders, unsigned int binaryF
 }
         
 __attribute__((import_name("glShaderSource")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glShaderSource(unsigned int shader, int count, char const* const* string, int const* length);
 
 void glShaderSource(unsigned int shader, int count, char const* const* string, int const* length) {
@@ -1416,7 +1416,7 @@ void glShaderSource(unsigned int shader, int count, char const* const* string, i
 }
         
 __attribute__((import_name("glStencilFunc")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilFunc(unsigned int func, int ref, unsigned int mask);
 
 void glStencilFunc(unsigned int func, int ref, unsigned int mask) {
@@ -1424,7 +1424,7 @@ void glStencilFunc(unsigned int func, int ref, unsigned int mask) {
 }
         
 __attribute__((import_name("glStencilFuncSeparate")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilFuncSeparate(unsigned int face, unsigned int func, int ref, unsigned int mask);
 
 void glStencilFuncSeparate(unsigned int face, unsigned int func, int ref, unsigned int mask) {
@@ -1432,7 +1432,7 @@ void glStencilFuncSeparate(unsigned int face, unsigned int func, int ref, unsign
 }
         
 __attribute__((import_name("glStencilMask")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilMask(unsigned int mask);
 
 void glStencilMask(unsigned int mask) {
@@ -1440,7 +1440,7 @@ void glStencilMask(unsigned int mask) {
 }
         
 __attribute__((import_name("glStencilMaskSeparate")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilMaskSeparate(unsigned int face, unsigned int mask);
 
 void glStencilMaskSeparate(unsigned int face, unsigned int mask) {
@@ -1448,7 +1448,7 @@ void glStencilMaskSeparate(unsigned int face, unsigned int mask) {
 }
         
 __attribute__((import_name("glStencilOp")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilOp(unsigned int fail, unsigned int zfail, unsigned int zpass);
 
 void glStencilOp(unsigned int fail, unsigned int zfail, unsigned int zpass) {
@@ -1456,7 +1456,7 @@ void glStencilOp(unsigned int fail, unsigned int zfail, unsigned int zpass) {
 }
         
 __attribute__((import_name("glStencilOpSeparate")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glStencilOpSeparate(unsigned int face, unsigned int sfail, unsigned int dpfail, unsigned int dppass);
 
 void glStencilOpSeparate(unsigned int face, unsigned int sfail, unsigned int dpfail, unsigned int dppass) {
@@ -1464,7 +1464,7 @@ void glStencilOpSeparate(unsigned int face, unsigned int sfail, unsigned int dpf
 }
         
 __attribute__((import_name("glTexImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexImage2D(unsigned int target, int level, int internalformat, int width, int height, int border, unsigned int format, unsigned int type, void const* pixels);
 
 void glTexImage2D(unsigned int target, int level, int internalformat, int width, int height, int border, unsigned int format, unsigned int type, void const* pixels) {
@@ -1472,7 +1472,7 @@ void glTexImage2D(unsigned int target, int level, int internalformat, int width,
 }
         
 __attribute__((import_name("glTexImage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexImage3D(unsigned int target, int level, int internalformat, int width, int height, int depth, int border, unsigned int format, unsigned int type, void const* pixels);
 
 void glTexImage3D(unsigned int target, int level, int internalformat, int width, int height, int depth, int border, unsigned int format, unsigned int type, void const* pixels) {
@@ -1480,7 +1480,7 @@ void glTexImage3D(unsigned int target, int level, int internalformat, int width,
 }
         
 __attribute__((import_name("glTexParameterf")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexParameterf(unsigned int target, unsigned int pname, float param);
 
 void glTexParameterf(unsigned int target, unsigned int pname, float param) {
@@ -1488,7 +1488,7 @@ void glTexParameterf(unsigned int target, unsigned int pname, float param) {
 }
         
 __attribute__((import_name("glTexParameterfv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexParameterfv(unsigned int target, unsigned int pname, float const* params);
 
 void glTexParameterfv(unsigned int target, unsigned int pname, float const* params) {
@@ -1496,7 +1496,7 @@ void glTexParameterfv(unsigned int target, unsigned int pname, float const* para
 }
         
 __attribute__((import_name("glTexParameteri")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexParameteri(unsigned int target, unsigned int pname, int param);
 
 void glTexParameteri(unsigned int target, unsigned int pname, int param) {
@@ -1504,7 +1504,7 @@ void glTexParameteri(unsigned int target, unsigned int pname, int param) {
 }
         
 __attribute__((import_name("glTexParameteriv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexParameteriv(unsigned int target, unsigned int pname, int const* params);
 
 void glTexParameteriv(unsigned int target, unsigned int pname, int const* params) {
@@ -1512,7 +1512,7 @@ void glTexParameteriv(unsigned int target, unsigned int pname, int const* params
 }
         
 __attribute__((import_name("glTexStorage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexStorage2D(unsigned int target, int levels, unsigned int internalformat, int width, int height);
 
 void glTexStorage2D(unsigned int target, int levels, unsigned int internalformat, int width, int height) {
@@ -1520,7 +1520,7 @@ void glTexStorage2D(unsigned int target, int levels, unsigned int internalformat
 }
         
 __attribute__((import_name("glTexStorage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexStorage3D(unsigned int target, int levels, unsigned int internalformat, int width, int height, int depth);
 
 void glTexStorage3D(unsigned int target, int levels, unsigned int internalformat, int width, int height, int depth) {
@@ -1528,7 +1528,7 @@ void glTexStorage3D(unsigned int target, int levels, unsigned int internalformat
 }
         
 __attribute__((import_name("glTexSubImage2D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, unsigned int type, void const* pixels);
 
 void glTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, unsigned int type, void const* pixels) {
@@ -1536,7 +1536,7 @@ void glTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, i
 }
         
 __attribute__((import_name("glTexSubImage3D")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, unsigned int format, unsigned int type, void const* pixels);
 
 void glTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, unsigned int format, unsigned int type, void const* pixels) {
@@ -1544,7 +1544,7 @@ void glTexSubImage3D(unsigned int target, int level, int xoffset, int yoffset, i
 }
         
 __attribute__((import_name("glTransformFeedbackVaryings")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glTransformFeedbackVaryings(unsigned int program, int count, char const* const* varyings, unsigned int bufferMode);
 
 void glTransformFeedbackVaryings(unsigned int program, int count, char const* const* varyings, unsigned int bufferMode) {
@@ -1552,7 +1552,7 @@ void glTransformFeedbackVaryings(unsigned int program, int count, char const* co
 }
         
 __attribute__((import_name("glUniform1f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1f(int location, float v0);
 
 void glUniform1f(int location, float v0) {
@@ -1560,7 +1560,7 @@ void glUniform1f(int location, float v0) {
 }
         
 __attribute__((import_name("glUniform1fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1fv(int location, int count, float const* value);
 
 void glUniform1fv(int location, int count, float const* value) {
@@ -1568,7 +1568,7 @@ void glUniform1fv(int location, int count, float const* value) {
 }
         
 __attribute__((import_name("glUniform1i")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1i(int location, int v0);
 
 void glUniform1i(int location, int v0) {
@@ -1576,7 +1576,7 @@ void glUniform1i(int location, int v0) {
 }
         
 __attribute__((import_name("glUniform1iv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1iv(int location, int count, int const* value);
 
 void glUniform1iv(int location, int count, int const* value) {
@@ -1584,7 +1584,7 @@ void glUniform1iv(int location, int count, int const* value) {
 }
         
 __attribute__((import_name("glUniform1ui")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1ui(int location, unsigned int v0);
 
 void glUniform1ui(int location, unsigned int v0) {
@@ -1592,7 +1592,7 @@ void glUniform1ui(int location, unsigned int v0) {
 }
         
 __attribute__((import_name("glUniform1uiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform1uiv(int location, int count, unsigned int const* value);
 
 void glUniform1uiv(int location, int count, unsigned int const* value) {
@@ -1600,7 +1600,7 @@ void glUniform1uiv(int location, int count, unsigned int const* value) {
 }
         
 __attribute__((import_name("glUniform2f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2f(int location, float v0, float v1);
 
 void glUniform2f(int location, float v0, float v1) {
@@ -1608,7 +1608,7 @@ void glUniform2f(int location, float v0, float v1) {
 }
         
 __attribute__((import_name("glUniform2fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2fv(int location, int count, float const* value);
 
 void glUniform2fv(int location, int count, float const* value) {
@@ -1616,7 +1616,7 @@ void glUniform2fv(int location, int count, float const* value) {
 }
         
 __attribute__((import_name("glUniform2i")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2i(int location, int v0, int v1);
 
 void glUniform2i(int location, int v0, int v1) {
@@ -1624,7 +1624,7 @@ void glUniform2i(int location, int v0, int v1) {
 }
         
 __attribute__((import_name("glUniform2iv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2iv(int location, int count, int const* value);
 
 void glUniform2iv(int location, int count, int const* value) {
@@ -1632,7 +1632,7 @@ void glUniform2iv(int location, int count, int const* value) {
 }
         
 __attribute__((import_name("glUniform2ui")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2ui(int location, unsigned int v0, unsigned int v1);
 
 void glUniform2ui(int location, unsigned int v0, unsigned int v1) {
@@ -1640,7 +1640,7 @@ void glUniform2ui(int location, unsigned int v0, unsigned int v1) {
 }
         
 __attribute__((import_name("glUniform2uiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform2uiv(int location, int count, unsigned int const* value);
 
 void glUniform2uiv(int location, int count, unsigned int const* value) {
@@ -1648,7 +1648,7 @@ void glUniform2uiv(int location, int count, unsigned int const* value) {
 }
         
 __attribute__((import_name("glUniform3f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3f(int location, float v0, float v1, float v2);
 
 void glUniform3f(int location, float v0, float v1, float v2) {
@@ -1656,7 +1656,7 @@ void glUniform3f(int location, float v0, float v1, float v2) {
 }
         
 __attribute__((import_name("glUniform3fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3fv(int location, int count, float const* value);
 
 void glUniform3fv(int location, int count, float const* value) {
@@ -1664,7 +1664,7 @@ void glUniform3fv(int location, int count, float const* value) {
 }
         
 __attribute__((import_name("glUniform3i")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3i(int location, int v0, int v1, int v2);
 
 void glUniform3i(int location, int v0, int v1, int v2) {
@@ -1672,7 +1672,7 @@ void glUniform3i(int location, int v0, int v1, int v2) {
 }
         
 __attribute__((import_name("glUniform3iv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3iv(int location, int count, int const* value);
 
 void glUniform3iv(int location, int count, int const* value) {
@@ -1680,7 +1680,7 @@ void glUniform3iv(int location, int count, int const* value) {
 }
         
 __attribute__((import_name("glUniform3ui")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3ui(int location, unsigned int v0, unsigned int v1, unsigned int v2);
 
 void glUniform3ui(int location, unsigned int v0, unsigned int v1, unsigned int v2) {
@@ -1688,7 +1688,7 @@ void glUniform3ui(int location, unsigned int v0, unsigned int v1, unsigned int v
 }
         
 __attribute__((import_name("glUniform3uiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform3uiv(int location, int count, unsigned int const* value);
 
 void glUniform3uiv(int location, int count, unsigned int const* value) {
@@ -1696,7 +1696,7 @@ void glUniform3uiv(int location, int count, unsigned int const* value) {
 }
         
 __attribute__((import_name("glUniform4f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4f(int location, float v0, float v1, float v2, float v3);
 
 void glUniform4f(int location, float v0, float v1, float v2, float v3) {
@@ -1704,7 +1704,7 @@ void glUniform4f(int location, float v0, float v1, float v2, float v3) {
 }
         
 __attribute__((import_name("glUniform4fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4fv(int location, int count, float const* value);
 
 void glUniform4fv(int location, int count, float const* value) {
@@ -1712,7 +1712,7 @@ void glUniform4fv(int location, int count, float const* value) {
 }
         
 __attribute__((import_name("glUniform4i")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4i(int location, int v0, int v1, int v2, int v3);
 
 void glUniform4i(int location, int v0, int v1, int v2, int v3) {
@@ -1720,7 +1720,7 @@ void glUniform4i(int location, int v0, int v1, int v2, int v3) {
 }
         
 __attribute__((import_name("glUniform4iv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4iv(int location, int count, int const* value);
 
 void glUniform4iv(int location, int count, int const* value) {
@@ -1728,7 +1728,7 @@ void glUniform4iv(int location, int count, int const* value) {
 }
         
 __attribute__((import_name("glUniform4ui")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4ui(int location, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3);
 
 void glUniform4ui(int location, unsigned int v0, unsigned int v1, unsigned int v2, unsigned int v3) {
@@ -1736,7 +1736,7 @@ void glUniform4ui(int location, unsigned int v0, unsigned int v1, unsigned int v
 }
         
 __attribute__((import_name("glUniform4uiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniform4uiv(int location, int count, unsigned int const* value);
 
 void glUniform4uiv(int location, int count, unsigned int const* value) {
@@ -1744,7 +1744,7 @@ void glUniform4uiv(int location, int count, unsigned int const* value) {
 }
         
 __attribute__((import_name("glUniformBlockBinding")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformBlockBinding(unsigned int program, unsigned int uniformBlockIndex, unsigned int uniformBlockBinding);
 
 void glUniformBlockBinding(unsigned int program, unsigned int uniformBlockIndex, unsigned int uniformBlockBinding) {
@@ -1752,7 +1752,7 @@ void glUniformBlockBinding(unsigned int program, unsigned int uniformBlockIndex,
 }
         
 __attribute__((import_name("glUniformMatrix2fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix2fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix2fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1760,7 +1760,7 @@ void glUniformMatrix2fv(int location, int count, unsigned char transpose, float 
 }
         
 __attribute__((import_name("glUniformMatrix2x3fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix2x3fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix2x3fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1768,7 +1768,7 @@ void glUniformMatrix2x3fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUniformMatrix2x4fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix2x4fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix2x4fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1776,7 +1776,7 @@ void glUniformMatrix2x4fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUniformMatrix3fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix3fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix3fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1784,7 +1784,7 @@ void glUniformMatrix3fv(int location, int count, unsigned char transpose, float 
 }
         
 __attribute__((import_name("glUniformMatrix3x2fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix3x2fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix3x2fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1792,7 +1792,7 @@ void glUniformMatrix3x2fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUniformMatrix3x4fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix3x4fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix3x4fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1800,7 +1800,7 @@ void glUniformMatrix3x4fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUniformMatrix4fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix4fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix4fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1808,7 +1808,7 @@ void glUniformMatrix4fv(int location, int count, unsigned char transpose, float 
 }
         
 __attribute__((import_name("glUniformMatrix4x2fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix4x2fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix4x2fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1816,7 +1816,7 @@ void glUniformMatrix4x2fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUniformMatrix4x3fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUniformMatrix4x3fv(int location, int count, unsigned char transpose, float const* value);
 
 void glUniformMatrix4x3fv(int location, int count, unsigned char transpose, float const* value) {
@@ -1824,7 +1824,7 @@ void glUniformMatrix4x3fv(int location, int count, unsigned char transpose, floa
 }
         
 __attribute__((import_name("glUnmapBuffer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 unsigned char imported_glUnmapBuffer(unsigned int target);
 
 unsigned char glUnmapBuffer(unsigned int target) {
@@ -1832,7 +1832,7 @@ unsigned char glUnmapBuffer(unsigned int target) {
 }
         
 __attribute__((import_name("glUseProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glUseProgram(unsigned int program);
 
 void glUseProgram(unsigned int program) {
@@ -1840,7 +1840,7 @@ void glUseProgram(unsigned int program) {
 }
         
 __attribute__((import_name("glValidateProgram")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glValidateProgram(unsigned int program);
 
 void glValidateProgram(unsigned int program) {
@@ -1848,7 +1848,7 @@ void glValidateProgram(unsigned int program) {
 }
         
 __attribute__((import_name("glVertexAttrib1f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib1f(unsigned int index, float x);
 
 void glVertexAttrib1f(unsigned int index, float x) {
@@ -1856,7 +1856,7 @@ void glVertexAttrib1f(unsigned int index, float x) {
 }
         
 __attribute__((import_name("glVertexAttrib1fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib1fv(unsigned int index, float const* v);
 
 void glVertexAttrib1fv(unsigned int index, float const* v) {
@@ -1864,7 +1864,7 @@ void glVertexAttrib1fv(unsigned int index, float const* v) {
 }
         
 __attribute__((import_name("glVertexAttrib2f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib2f(unsigned int index, float x, float y);
 
 void glVertexAttrib2f(unsigned int index, float x, float y) {
@@ -1872,7 +1872,7 @@ void glVertexAttrib2f(unsigned int index, float x, float y) {
 }
         
 __attribute__((import_name("glVertexAttrib2fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib2fv(unsigned int index, float const* v);
 
 void glVertexAttrib2fv(unsigned int index, float const* v) {
@@ -1880,7 +1880,7 @@ void glVertexAttrib2fv(unsigned int index, float const* v) {
 }
         
 __attribute__((import_name("glVertexAttrib3f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib3f(unsigned int index, float x, float y, float z);
 
 void glVertexAttrib3f(unsigned int index, float x, float y, float z) {
@@ -1888,7 +1888,7 @@ void glVertexAttrib3f(unsigned int index, float x, float y, float z) {
 }
         
 __attribute__((import_name("glVertexAttrib3fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib3fv(unsigned int index, float const* v);
 
 void glVertexAttrib3fv(unsigned int index, float const* v) {
@@ -1896,7 +1896,7 @@ void glVertexAttrib3fv(unsigned int index, float const* v) {
 }
         
 __attribute__((import_name("glVertexAttrib4f")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib4f(unsigned int index, float x, float y, float z, float w);
 
 void glVertexAttrib4f(unsigned int index, float x, float y, float z, float w) {
@@ -1904,7 +1904,7 @@ void glVertexAttrib4f(unsigned int index, float x, float y, float z, float w) {
 }
         
 __attribute__((import_name("glVertexAttrib4fv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttrib4fv(unsigned int index, float const* v);
 
 void glVertexAttrib4fv(unsigned int index, float const* v) {
@@ -1912,7 +1912,7 @@ void glVertexAttrib4fv(unsigned int index, float const* v) {
 }
         
 __attribute__((import_name("glVertexAttribDivisor")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribDivisor(unsigned int index, unsigned int divisor);
 
 void glVertexAttribDivisor(unsigned int index, unsigned int divisor) {
@@ -1920,7 +1920,7 @@ void glVertexAttribDivisor(unsigned int index, unsigned int divisor) {
 }
         
 __attribute__((import_name("glVertexAttribI4i")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribI4i(unsigned int index, int x, int y, int z, int w);
 
 void glVertexAttribI4i(unsigned int index, int x, int y, int z, int w) {
@@ -1928,7 +1928,7 @@ void glVertexAttribI4i(unsigned int index, int x, int y, int z, int w) {
 }
         
 __attribute__((import_name("glVertexAttribI4iv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribI4iv(unsigned int index, int const* v);
 
 void glVertexAttribI4iv(unsigned int index, int const* v) {
@@ -1936,7 +1936,7 @@ void glVertexAttribI4iv(unsigned int index, int const* v) {
 }
         
 __attribute__((import_name("glVertexAttribI4ui")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribI4ui(unsigned int index, unsigned int x, unsigned int y, unsigned int z, unsigned int w);
 
 void glVertexAttribI4ui(unsigned int index, unsigned int x, unsigned int y, unsigned int z, unsigned int w) {
@@ -1944,7 +1944,7 @@ void glVertexAttribI4ui(unsigned int index, unsigned int x, unsigned int y, unsi
 }
         
 __attribute__((import_name("glVertexAttribI4uiv")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribI4uiv(unsigned int index, unsigned int const* v);
 
 void glVertexAttribI4uiv(unsigned int index, unsigned int const* v) {
@@ -1952,7 +1952,7 @@ void glVertexAttribI4uiv(unsigned int index, unsigned int const* v) {
 }
         
 __attribute__((import_name("glVertexAttribIPointer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribIPointer(unsigned int index, int size, unsigned int type, int stride, void const* pointer);
 
 void glVertexAttribIPointer(unsigned int index, int size, unsigned int type, int stride, void const* pointer) {
@@ -1960,7 +1960,7 @@ void glVertexAttribIPointer(unsigned int index, int size, unsigned int type, int
 }
         
 __attribute__((import_name("glVertexAttribPointer")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glVertexAttribPointer(unsigned int index, int size, unsigned int type, unsigned char normalized, int stride, void const* pointer);
 
 void glVertexAttribPointer(unsigned int index, int size, unsigned int type, unsigned char normalized, int stride, void const* pointer) {
@@ -1968,7 +1968,7 @@ void glVertexAttribPointer(unsigned int index, int size, unsigned int type, unsi
 }
         
 __attribute__((import_name("glViewport")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glViewport(int x, int y, int width, int height);
 
 void glViewport(int x, int y, int width, int height) {
@@ -1976,7 +1976,7 @@ void glViewport(int x, int y, int width, int height) {
 }
         
 __attribute__((import_name("glWaitSync")))
-__attribute__((import_module("webrogue_gl")))
+__attribute__((import_module("webrogue-gl")))
 void imported_glWaitSync(void* sync, unsigned int flags, uint64_t timeout);
 
 void glWaitSync(void* sync, unsigned int flags, uint64_t timeout) {

@@ -6,11 +6,11 @@
 #include "gl2.inc"
 
 __attribute__((import_name("glGetStringData")))
-__attribute__((import_module("webrogue_gl"))) void
+__attribute__((import_module("webrogue-gl"))) void
 imported_glGetStringData(int i, unsigned int name, unsigned char *data_ptr);
 
 __attribute__((import_name("glGetStringLen")))
-__attribute__((import_module("webrogue_gl"))) int
+__attribute__((import_module("webrogue-gl"))) int
 imported_glGetStringLen(int i, unsigned int name);
 
 struct StrList {
