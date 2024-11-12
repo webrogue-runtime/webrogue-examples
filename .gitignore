@@ -1,4 +1,5 @@
 /wasi-sdk-*
+/wasix-sysroot
 /wrapp
 /*/*.wrapp
 .DS_Store

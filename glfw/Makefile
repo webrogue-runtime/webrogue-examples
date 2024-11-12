@@ -1,11 +1,11 @@
 glfw: BUILD glfw.wrapp
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-ROOT_DIR:=$(shell dirname $(CURRENT_DIR))
+EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
 
 BUILD:
 	rm -f main.wasm
-	cmake -S . -B build --toolchain=$(CURRENT_DIR)/toolchain.cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug
+	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=$(EXAMPLES_DIR)//wasix-sysroot
 	cmake --build build --target=main --parallel
 	cp build/main main.wasm
 

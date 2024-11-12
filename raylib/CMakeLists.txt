@@ -14,7 +14,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 add_executable(${PROJECT_TARGET} main.c ../libs/webrogue_gfx/webrogue_gfx.c)
-add_library(GL STATIC ${CMAKE_CURRENT_SOURCE_DIR}/../libs/GLES2/gl2.c ${CMAKE_CURRENT_SOURCE_DIR}/../libs/cxa_exception.cpp ../libs/webrogue_gfx/webrogue_gl_loader.c)
+add_library(GL STATIC ${CMAKE_CURRENT_SOURCE_DIR}/../libs/GLES2/gl2.c ../libs/webrogue_gfx/webrogue_gl_loader.c)
 target_include_directories(GL PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../libs/)
 
 target_include_directories(${PROJECT_TARGET} PRIVATE ${SOURCE_DIR})
