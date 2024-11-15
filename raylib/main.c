@@ -16,12 +16,35 @@
 #include "raylib.h"
 
 #include <math.h>       // Required for: sinf()
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+#include <pthread.h>
+
+void *thread(void *ptr)
+{
+    *((int*) ptr) = 15;
+    printf("Thread created\n");
+    return NULL;
+}
 
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
 int main()
 {
+    pthread_t thread1;
+
+        int thread_result = 11;
+        // start the threads
+        pthread_create(&thread1, NULL, *thread, (void *) thread_result);
+
+        usleep(1000000);
+        // wait for threads to finish
+        pthread_join(thread1, NULL);
+
+
+        printf("Thread result: %d\n", thread_result );
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
@@ -49,6 +72,14 @@ int main()
         // Update
         //----------------------------------------------------------------------------------
         double time = GetTime();
+
+        // if(!fork()) {
+        //     printf("forked!\n");
+        //     return 0;
+        // }
+
+
+        
 
         // Calculate time scale for cube position and size
         float scale = (2.0f + (float)sin(time))*0.7f;

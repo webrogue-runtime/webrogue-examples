@@ -2,4 +2,5 @@
 /wasix-sysroot
 /wrapp
 /*/*.wrapp
+/*/*.webc
 .DS_Store

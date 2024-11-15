@@ -1,0 +1,8 @@
+[[module]]
+name = "raylib"
+source = "main.wasm"
+
+[[command]]
+name = "raylib"
+module = "raylib"
+runner = "https://webc.org/runner/webrogue"
