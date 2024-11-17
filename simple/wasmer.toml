@@ -1,0 +1,8 @@
+[[module]]
+name = "simple"
+source = "main.wasm"
+
+[[command]]
+name = "simple"
+module = "simple"
+runner = "https://webc.org/runner/webrogue"
