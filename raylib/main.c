@@ -37,7 +37,7 @@ int main()
 
         int thread_result = 11;
         // start the threads
-        pthread_create(&thread1, NULL, *thread, (void *) thread_result);
+        pthread_create(&thread1, NULL, *thread, (void *) &thread_result);
 
         usleep(1000000);
         // wait for threads to finish
