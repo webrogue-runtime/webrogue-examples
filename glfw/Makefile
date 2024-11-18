@@ -1,4 +1,4 @@
-glfw: BUILD glfw.wrapp
+glfw: BUILD glfw.webc
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
@@ -11,5 +11,6 @@ BUILD:
 
 main.wasm: BUILD
 
-glfw.wrapp: main.wasm ../wrapp webrogue.json
-	../wrapp . glfw.wrapp
+glfw.webc: main.wasm ../wasmer
+	rm -f glfw.webc
+	../wasmer package build --out=glfw.webc

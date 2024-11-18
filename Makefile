@@ -1,11 +1,11 @@
-all: build_wrapp build_simple build_gears build_glfw build_raylib
+all: build_wasmer build_simple build_gears build_glfw build_raylib
 
 # utility
-build_wrapp:
-	cargo build --release --manifest-path ../Cargo.toml --target-dir ../target --package webrogue-wrapp-cli
-	cp ../target/release/webrogue-wrapp-cli wrapp
+build_wasmer:
+	cargo build --release --manifest-path ../external/wasmer/lib/cli/Cargo.toml --target-dir ./target
+	cp ./target/release/wasmer wasmer
 
-wrapp: build_wrapp
+wasmer: build_wasmer
 
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
@@ -35,14 +35,14 @@ wasix-sysroot:
 sysroot: wasi-sdk-24 wasix-sysroot
 
 # apps
-build_simple: wrapp sysroot
+build_simple: wasmer sysroot
 	cd simple && $(MAKE)
 
-build_gears: wrapp sysroot
+build_gears: wasmer sysroot
 	cd gears && $(MAKE)
 
-build_glfw: wrapp sysroot
+build_glfw: wasmer sysroot
 	cd glfw && $(MAKE)
 
-build_raylib: wrapp sysroot
+build_raylib: wasmer sysroot
 	cd raylib && $(MAKE)

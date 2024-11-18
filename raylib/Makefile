@@ -1,4 +1,4 @@
-raylib: BUILD_ raylib.wrapp
+raylib: BUILD_ raylib.webc
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
@@ -11,5 +11,6 @@ BUILD_:
 
 main.wasm: BUILD_
 
-raylib.wrapp: main.wasm ../wrapp webrogue.json
-	../wrapp . raylib.wrapp
+raylib.webc: main.wasm ../wasmer
+	rm -f raylib.webc
+	../wasmer package build --out=raylib.webc

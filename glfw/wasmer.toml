@@ -1,0 +1,8 @@
+[[module]]
+name = "glfw"
+source = "main.wasm"
+
+[[command]]
+name = "glfw"
+module = "glfw"
+runner = "https://webc.org/runner/webrogue"

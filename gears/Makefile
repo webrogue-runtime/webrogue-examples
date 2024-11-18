@@ -1,4 +1,4 @@
-gears: gears.wrapp
+gears: gears.webc
 	echo
 
 CC = "../wasi-sdk-24/bin/clang"
@@ -56,5 +56,6 @@ CLFLAGS = -Wl,--shared-memory \
 main.wasm: gears.c Makefile
 	${CC} $(CFLAGS) $(CLFLAGS) gears.c ../libs/webrogue_gfx/webrogue_gfx.c ../libs/GLES2/gl2.c -I../libs -D__WEBROGUE__ -o main.wasm #-nostdlib # -Wl,--no-entry
 
-gears.wrapp: main.wasm ../wrapp webrogue.json
-	../wrapp . gears.wrapp
+gears.webc: main.wasm ../wasmer
+	rm -f gears.webc
+	../wasmer package build --out=gears.webc

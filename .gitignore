@@ -1,6 +1,6 @@
 /wasi-sdk-*
 /wasix-sysroot
-/wrapp
-/*/*.wrapp
+/wasmer
 /*/*.webc
 .DS_Store
+/target
