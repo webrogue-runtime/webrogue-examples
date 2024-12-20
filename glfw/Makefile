@@ -5,12 +5,16 @@ EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
 
 BUILD:
 	rm -f main.wasm
-	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=$(EXAMPLES_DIR)//wasix-sysroot
+	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
+	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
 	cmake --build build --target=main --parallel
 	cp build/main main.wasm
 
 main.wasm: BUILD
 
-glfw.webc: main.wasm ../wasmer
+glfw.webc: main.wasm
 	rm -f glfw.webc
-	../wasmer package build --out=glfw.webc
+	/.wasmer/bin/wasmer package build --out=glfw.webc
+
+clean:
+	rm -rf build glfw.webc main.wasm

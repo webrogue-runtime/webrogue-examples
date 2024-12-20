@@ -4,3 +4,6 @@
 [submodule "libs/raylib"]
 	path = libs/raylib
 	url = https://github.com/webrogue-runtime/raylib.git
+[submodule "libs/SDL2"]
+	path = libs/SDL2
+	url = https://github.com/Destructor17/SDL.git

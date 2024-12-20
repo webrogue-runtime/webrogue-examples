@@ -1,0 +1,14 @@
+set -ex
+cd $(dirname $0)
+
+image_name=webrogue_example_builder
+docker build -t $image_name -f builder.Dockerfile .
+echo $(dirname $(dirname $(pwd)))
+run_in_docker() {
+    docker run \
+        -it \
+        -v $(dirname $(dirname $(pwd))):/host_dir \
+        -u $(id -u ${USER}):$(id -g ${USER}) \
+        -t $image_name \
+        bash -c "$1"
+}
