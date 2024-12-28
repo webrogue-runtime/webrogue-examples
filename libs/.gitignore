@@ -1,0 +1,4 @@
+/harfbuzz_build_dir
+/mbedtls
+/jpeg/*
+!/jpeg/CMakeLists.txt

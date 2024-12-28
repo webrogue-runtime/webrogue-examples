@@ -1,8 +1,8 @@
 # Cmake toolchain description file for the Makefile for WASI
 cmake_minimum_required(VERSION 3.31.0)
 
-set(COMPILE_FLAGS "-O2 -matomics -mbulk-memory -mmutable-globals -pthread -mthread-model posix -ftls-model=local-exec -fno-trapping-math -D_WASI_EMULATED_MMAN -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PROCESS_CLOCKS -fno-exceptions -I${CMAKE_CURRENT_LIST_DIR}/dest/include")
-set(LINK_FLAGS "-lwasi-emulated-mman -lwasi-emulated-process-clocks -lwasi-emulated-getpid -fno-exceptions -Wl,--shared-memory -Wl,--max-memory=4294967296 -Wl,--import-memory -Wl,--export-dynamic -Wl,--export=__heap_base -Wl,--export=__stack_pointer -Wl,--export=__data_end -Wl,--export=__wasm_init_tls -Wl,--export=__wasm_signal -Wl,--export=__tls_size -Wl,--export=__tls_align -Wl,--export=__tls_base -Wl,-L${CMAKE_CURRENT_LIST_DIR}/dest/lib")
+set(COMPILE_FLAGS "-O2 -matomics -mbulk-memory -mmutable-globals -pthread -mthread-model posix -ftls-model=local-exec -fno-trapping-math -D_WASI_EMULATED_MMAN -D_WASI_EMULATED_SIGNAL -D_WASI_EMULATED_PROCESS_CLOCKS -I${CMAKE_CURRENT_LIST_DIR}/dest/include")
+set(LINK_FLAGS "-lwasi-emulated-mman -lwasi-emulated-process-clocks -lwasi-emulated-getpid -Wl,--shared-memory -Wl,--max-memory=4294967296 -Wl,--import-memory -Wl,--export-dynamic -Wl,--export=__heap_base -Wl,--export=__stack_pointer -Wl,--export=__data_end -Wl,--export=__wasm_init_tls -Wl,--export=__wasm_signal -Wl,--export=__tls_size -Wl,--export=__tls_align -Wl,--export=__tls_base -Wl,-L${CMAKE_CURRENT_LIST_DIR}/dest/lib")
 
 set(CMAKE_SYSTEM_NAME WASI) # Generic for now, to not trigger a Warning
 set(CMAKE_SYSTEM_VERSION 1)
@@ -34,3 +34,5 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+# set(CMAKE_PREFIX_PATH /dest)
+# set(CMAKE_FIND_ROOT_PATH /dest/lib)

@@ -53,8 +53,8 @@ CLFLAGS = -Wl,--shared-memory \
 		  -Wl,--export=__tls_align \
 		  -Wl,--export=__tls_base
 
-main.wasm: gears.c Makefile
-	${CC} $(CFLAGS) $(CLFLAGS) gears.c -Wl,-lwebrogue_gfx -Wl,-L../dest/lib -I../dest/include -D__WEBROGUE__ -o main.wasm #-nostdlib # -Wl,--no-entry
+main.wasm: gears.c Makefile ../dest/lib/libSDL2.a
+	${CC} $(CFLAGS) $(CLFLAGS) gears.c -Wl,-lwebrogue_gfx -Wl,../dest/lib/libSDL2.a -Wl,-L../dest/lib -I../dest/include -o main.wasm #-D__WEBROGUE__ #-nostdlib -Wl,--no-entry 
 
 gears.webc: main.wasm
 	rm -f gears.webc

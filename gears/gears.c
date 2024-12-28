@@ -744,13 +744,13 @@ int main(int argc, char *argv[]) {
 
 #ifdef __WEBROGUE__
   webrogue_gfx_make_window();
+  imported_init_ptrs();
 #else
   uint32_t WindowFlags = SDL_WINDOW_OPENGL;
   Window = SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags);
   assert(Window);
   SDL_GLContext Context = SDL_GL_CreateContext(Window);
 #endif
-  imported_init_ptrs();
 
   gears_reshape(300, 300);
 

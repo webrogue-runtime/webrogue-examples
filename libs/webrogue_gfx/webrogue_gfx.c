@@ -37,3 +37,11 @@ void webrogue_gfx_gl_size(int *width, int *height) {
   *width = imported_webrogue_gfx_get_gl_width();
   *height = imported_webrogue_gfx_get_gl_height();
 }
+
+__attribute__((import_name("init-ptrs")))
+__attribute__((import_module("webrogue-gl"))) void
+imported_webrogue_gfx_init_ptrs();
+
+void webrogue_gfx_init_ptrs() {
+  imported_webrogue_gfx_init_ptrs();
+}
