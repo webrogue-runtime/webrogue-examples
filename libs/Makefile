@@ -128,7 +128,7 @@ build_harfbuzz:
 	cmake --install harfbuzz_build_dir --prefix $(CURRENT_DIR)/../dest
 
 clean_harfbuzz:
-	rm -rf harfbuzz/build
+	rm -rf harfbuzz_build_dir
 
 build_curl: build_mbedtls
 	cd curl && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -DBUILD_SHARED_LIBS=OFF -DBUILD_STATIC_LIBS=ON -DCURL_USE_MBEDTLS=ON -DMBEDTLS_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include/mbedtls -DMBEDTLS_LIBRARY=$(CURRENT_DIR)/../dest/lib/libmbedtls.a -DMBEDX509_LIBRARY=$(CURRENT_DIR)/../dest/lib/libmbedx509.a -DMBEDCRYPTO_LIBRARY=$(CURRENT_DIR)/../dest/lib/libmbedcrypto.a -DCURL_USE_LIBPSL=OFF -DBUILD_LIBCURL_DOCS=OFF -DBUILD_MISC_DOCS=OFF -DENABLE_CURL_MANUAL=OFF -DBUILD_CURL_EXE=OFF
@@ -138,14 +138,25 @@ build_curl: build_mbedtls
 clean_curl:
 	rm -rf curl/build
 
-build_mbedtls:
+mbedtls:
+	curl -L https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.2/mbedtls-3.6.2.tar.bz2 | tar -xj
+	mv mbedtls-3.6.2 mbedtls
+	# TODO use diff
+	cp mbedtls_patch/mbedtls_config.h mbedtls/include/mbedtls/mbedtls_config.h
+	cp mbedtls_patch/timing.c mbedtls/library/timing.c
+	cp mbedtls_patch/platform_util.c mbedtls/library/platform_util.c
+	cp mbedtls_patch/net_sockets.c mbedtls/library/net_sockets.c
+
+build_mbedtls: mbedtls
 	cd mbedtls && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -DBUILD_SHARED_LIBS=OFF -DENABLE_TESTING=Off -DGEN_FILES=OFF -DENABLE_PROGRAMS=OFF
 	cmake --build mbedtls/build --target=mbedtls --parallel
 	cmake --install mbedtls/build --prefix $(CURRENT_DIR)/../dest
 
 clean_mbedtls:
-	rm -rf mbedtls/build
+	rm -rf mbedtls
 
 clean: clean_webrogue_gfx clean_SDL2 clean_glfw clean_raylib clean_jpeg clean_png clean_zlib clean_libsamplerate clean_vorbis clean_ogg clean_freetype clean_harfbuzz clean_curl clean_mbedtls
 	rm -rf $(CURRENT_DIR)/../dest/include
 	rm -rf $(CURRENT_DIR)/../dest/lib
+	rm -rf $(CURRENT_DIR)/../dest/bin
+	rm -rf $(CURRENT_DIR)/../dest/share
