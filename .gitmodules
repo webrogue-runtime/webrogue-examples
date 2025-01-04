@@ -27,7 +27,7 @@
 	url = https://github.com/xiph/ogg.git
 [submodule "libs/freetype"]
 	path = libs/freetype
-	url = https://github.com/freetype/freetype.git
+	url = https://github.com/webrogue-runtime/freetype.git
 [submodule "libs/harfbuzz"]
 	path = libs/harfbuzz
 	url = https://github.com/harfbuzz/harfbuzz.git

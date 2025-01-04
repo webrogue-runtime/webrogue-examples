@@ -73,14 +73,14 @@ clean_jpeg:
 	rm -rf jpeg/build
 
 build_png: build_zlib
-	cd libpng && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DZLIB_LIBRARY=$(CURRENT_DIR)/../dest/lib/libzlib.a -DZLIB_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include -DPNG_SHARED=OFF -DPNG_STATIC=ON
+	cd libpng && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DZLIB_LIBRARY=$(CURRENT_DIR)/../dest/lib/libzlib.a -DZLIB_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include -DPNG_SHARED=OFF -DPNG_STATIC=ON -DCMAKE_C_FLAGS="-DPNG_SETJMP_NOT_SUPPORTED"
 	cmake --build libpng/build --target=png_static --parallel
 	cmake --install libpng/build --prefix $(CURRENT_DIR)/../dest
 
 clean_png:
 	rm -rf libpng/build
 
-build_zlib: 
+build_zlib:
 	cd zlib && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -DZLIB_SKIP_SHARED=ON
 	cmake --build zlib/build --target=zlibstatic --parallel
 	cmake --install zlib/build --prefix $(CURRENT_DIR)/../dest
@@ -115,7 +115,7 @@ clean_ogg:
 	rm -rf ogg/build
 
 build_freetype:
-	cd freetype && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -DBUILD_SHARED_LIBS=OFF
+	cd freetype && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -DBUILD_SHARED_LIBS=OFF -DFT_REQUIRE_PNG=ON -DFT_REQUIRE_ZLIB=ON -DPNG_LIBRARY=$(CURRENT_DIR)/../dest/lib/libpng.a -DPNG_PNG_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include/libpng16 -DZLIB_LIBRARY=$(CURRENT_DIR)/../dest/lib/libzlib.a -DZLIB_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include
 	cmake --build freetype/build --target=install --parallel
 	# cmake --install freetype/build --prefix $(CURRENT_DIR)/../dest
 
