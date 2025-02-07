@@ -4,18 +4,37 @@
 #include <GLES3/gl3.h>
 #include <stddef.h>
 #include <string.h>
+#include "HostConnection.h"
 
 // clang-format off
+
+
+extern "C" void *__cxa_allocate_exception(size_t thrown_size) throw() {
+    printf("__cxa_allocate_exception\n");
+    size_t actual_size = thrown_size+1024;
+    void* result = malloc(actual_size);
+    ::memset(result, 0, actual_size);
+    
+    return ((char*)result)+512;
+}
+
+extern "C" void __cxa_throw(void *thrown_object, std::type_info *tinfo, void (*dest)(void *)) {
+    printf("__cxa_throw\n");
+    __builtin_unreachable();
+    abort();
+}
 
 __attribute__((import_name("init-ptrs")))
 __attribute__((import_module("webrogue-gl"))) void
 imported_init_ptrs();
 
-void* webrogueGLLoader(const char* procname) {
-  static char loaded = 0;
-  if(!loaded) {
+static std::unique_ptr<HostConnection> shared_host_connection = nullptr;
+
+extern "C" void* webrogueGLLoader(const char* procname) {
+  if(!shared_host_connection) {
+    shared_host_connection = HostConnection::createUnique();
+    shared_host_connection->gl2Encoder();
     imported_init_ptrs();
-    loaded = 1;
   }
   if (strcmp(procname, "glActiveTexture") == 0)
     return (void *)glActiveTexture;

@@ -1,6 +1,72 @@
 cmake_minimum_required(VERSION 3.31)
 
-add_library(webrogue_gfx STATIC webrogue_gfx.c webrogue_gl_loader.c gl2.c)
+set(GFX_SRC_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../external/gfxstream)
+set(AEMU_SRC_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../external/aemu)
+
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.cc ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.h
+    COMMAND protoc --cpp_out=. ProgramBinary.proto
+    WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+    DEPENDS ProgramBinary.proto
+)
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.proto
+    COMMAND cat ../../../external/gfxstream/guest/GLESv2_enc/ProgramBinary.proto protobuf_lite_suffix.txt >ProgramBinary.proto
+    WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+    DEPENDS ${CMAKE_CURRENT_LIST_DIR}/../../../external/gfxstream/guest/GLESv2_enc/ProgramBinary.proto ${CMAKE_CURRENT_LIST_DIR}/protobuf_lite_suffix.txt
+)
+
+add_library(
+    webrogue_gfx
+    STATIC
+    webrogue_gfx.c
+    # webrogue_gl_loader.c
+    webrogue_gl_loader.cpp
+    # gl2.c
+    ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.cc
+    ${GFX_SRC_DIR}/common/etc/etc.cpp
+    # ${GFX_SRC_DIR}/guest/GLESv2/gl2.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/GL2Encoder.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_enc.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/IOStream2.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/GL2EncoderUtils.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/GLESv2Validation.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_entry.cpp
+    ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_client_context.cpp
+    ${GFX_SRC_DIR}/guest/OpenglSystemCommon/ThreadInfo.cpp
+    ${GFX_SRC_DIR}/guest/OpenglSystemCommon/HostConnection.cpp
+    ${GFX_SRC_DIR}/guest/OpenglSystemCommon/ProcessPipe.cpp
+    ${GFX_SRC_DIR}/guest/OpenglSystemCommon/WebrogueStream.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/GLClientState.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/glUtils.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/GLESTextureUtils.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/ChecksumCalculator.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/GLSharedGroup.cpp
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/IndexRangeCache.cpp
+    
+    ${GFX_SRC_DIR}/guest/android-emu/aemu/base/Tracing.cpp
+    ${AEMU_SRC_DIR}/host-common/logging_absl.cpp
+)
+
+target_include_directories(
+    webrogue_gfx
+    PRIVATE
+    ${GFX_SRC_DIR}/guest/egl
+    ${GFX_SRC_DIR}/common/opengl/include
+    ${GFX_SRC_DIR}/guest/GLESv1_enc
+    ${GFX_SRC_DIR}/guest/GLESv2_enc
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon
+    ${GFX_SRC_DIR}/guest/OpenglCodecCommon/include
+    ${GFX_SRC_DIR}/guest/OpenglSystemCommon
+    ${GFX_SRC_DIR}/guest/android-emu
+    ${GFX_SRC_DIR}/include
+    ${GFX_SRC_DIR}/guest/renderControl_enc
+    ${GFX_SRC_DIR}/common/etc/include
+    ${AEMU_SRC_DIR}/host-common/include
+    ${AEMU_SRC_DIR}/host-common/include/host-common
+    ${CMAKE_CURRENT_LIST_DIR}
+)
+
 set_target_properties(webrogue_gfx PROPERTIES PUBLIC_HEADER "webrogue_gfx.h")
 
 install(

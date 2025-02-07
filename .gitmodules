@@ -34,3 +34,9 @@
 [submodule "libs/curl"]
 	path = libs/curl
 	url = https://github.com/curl/curl.git
+[submodule "libs/protobuf"]
+	path = libs/protobuf
+	url = https://github.com/protocolbuffers/protobuf.git
+[submodule "libs/abseil-cpp"]
+	path = libs/abseil-cpp
+	url = https://github.com/webrogue-runtime/abseil-cpp.git

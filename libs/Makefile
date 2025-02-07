@@ -1,4 +1,4 @@
-all: copy_glad copy_gles2 copy_gles3 copy_khr build_webrogue_gfx build_SDL2 build_glfw build_raylib build_jpeg build_png build_zlib build_libsamplerate build_vorbis build_ogg build_freetype build_harfbuzz build_curl build_mbedtls
+all: copy_glad copy_gles2 copy_gles3 copy_khr build_webrogue_gfx build_SDL2 build_glfw build_raylib build_jpeg build_png build_zlib build_libsamplerate build_vorbis build_ogg build_freetype build_harfbuzz build_curl build_mbedtls build_abseil
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
@@ -30,8 +30,8 @@ $(CURRENT_DIR)/../dest/include/KHR:
 	cp -r KHR/ $(CURRENT_DIR)/../dest/include
 
 # build and install libs
-build_webrogue_gfx: copy_gles2 copy_gles3 copy_khr
-	cd webrogue_gfx && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release
+build_webrogue_gfx: copy_gles2 copy_gles3 copy_khr build_protobuf_lite
+	cd webrogue_gfx && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DPROTOBUF_LITE_INCLUDE_DIR=$(CURRENT_DIR)/../dest/include -DPROTOBUF_LITE_LIBRARY=$(CURRENT_DIR)/../dest/lib/libprotobuf-lite.a
 	cmake --build webrogue_gfx/build --target=webrogue_gfx --parallel
 	cmake --install webrogue_gfx/build --prefix $(CURRENT_DIR)/../dest
 
@@ -155,7 +155,31 @@ build_mbedtls: mbedtls
 clean_mbedtls:
 	rm -rf mbedtls
 
-clean: clean_webrogue_gfx clean_SDL2 clean_glfw clean_raylib clean_jpeg clean_png clean_zlib clean_libsamplerate clean_vorbis clean_ogg clean_freetype clean_harfbuzz clean_curl clean_mbedtls
+build_protobuf_lite: build_abseil
+	cd protobuf && cmake -S . -B _build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -Dprotobuf_BUILD_SHARED_LIBS=OFF -Dprotobuf_BUILD_PROTOC_BINARIES=OFF -Dprotobuf_BUILD_LIBPROTOC=OFF -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package -Dabsl_DIR=$(CURRENT_DIR)/../dest/lib/cmake/absl
+	cd protobuf && cmake -S . -B _build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest -Dprotobuf_BUILD_SHARED_LIBS=OFF -Dprotobuf_BUILD_PROTOC_BINARIES=OFF -Dprotobuf_BUILD_LIBPROTOC=OFF -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_ABSL_PROVIDER=package -Dabsl_DIR=$(CURRENT_DIR)/../dest/lib/cmake/absl
+	cmake --build protobuf/_build --target=libprotobuf-lite -j4
+	cmake --build protobuf/_build --target=utf8_range -j4
+	cmake --install protobuf/_build --prefix $(CURRENT_DIR)/../dest --component libprotobuf-lite
+	cmake --install protobuf/_build --prefix $(CURRENT_DIR)/../dest --component protobuf-headers
+	cmake --install protobuf/_build --prefix $(CURRENT_DIR)/../dest --component utf8_range
+
+clean_protobuf_lite:
+	rm -rf protobuf/_build
+
+build_abseil:
+	cd abseil-cpp && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest
+	cd abseil-cpp && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest
+	cmake --build abseil-cpp/build --target=all -j4
+	cmake --install abseil-cpp/build --prefix $(CURRENT_DIR)/../dest
+
+	rm /host_dir/examples/dest/lib/libabsl_all.a
+	/wasi-sdk/bin/llvm-ar qsL /host_dir/examples/dest/lib/libabsl_all.a /host_dir/examples/dest/lib/libabsl_*.a
+
+clean_abseil:
+	rm -rf protobuf/build
+
+clean: clean_webrogue_gfx clean_SDL2 clean_glfw clean_raylib clean_jpeg clean_png clean_zlib clean_libsamplerate clean_vorbis clean_ogg clean_freetype clean_harfbuzz clean_curl clean_mbedtls clean_protobuf_lite clean_abseil
 	rm -rf $(CURRENT_DIR)/../dest/include
 	rm -rf $(CURRENT_DIR)/../dest/lib
 	rm -rf $(CURRENT_DIR)/../dest/bin

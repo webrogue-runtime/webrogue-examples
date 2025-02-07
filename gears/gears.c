@@ -40,7 +40,8 @@
 
 #define _GNU_SOURCE
 
-#include <GLES2/gl2.h>
+#define GLAD_GLES2_IMPLEMENTATION
+#include "../libs/glfw/deps/glad/gles2.h"
 #include <assert.h>
 #include <math.h>
 #include <stdint.h>
@@ -50,13 +51,8 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-#ifdef __WEBROGUE__
-#include <webrogue_gfx/webrogue_gfx.h>
-#else
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_opengl.h>
 SDL_Window *Window;
-#endif
 
 #define STRIPS_PER_TOOTH 7
 #define VERTICES_PER_TOOTH 34
@@ -543,11 +539,7 @@ static void gears_draw(void) {
   draw_gear(gear2, transform, 3.1, -2.0, -2 * angle - 9.0, green);
   draw_gear(gear3, transform, -3.1, 4.2, -2 * angle - 25.0, blue);
 
-#ifdef __WEBROGUE__
-  webrogue_gfx_present();
-#else
   SDL_GL_SwapWindow(Window);
-#endif
 }
 
 /**
@@ -667,11 +659,6 @@ static const char fragment_shader[] = "#ifdef GL_ES\n"
                                       "    gl_FragColor = Color;\n"
                                       "}";
 
-
-__attribute__((import_name("init-ptrs")))
-__attribute__((import_module("webrogue-gl"))) void
-imported_init_ptrs();
-
 static void gears_init(void) {
   GLuint v, f, program;
   const char *p;
@@ -729,28 +716,11 @@ static void gears_init(void) {
 }
 
 int main(int argc, char *argv[]) {
-  /* Initialize the window */
-  //   glutInit(&argc, argv);
-  //   glutInitWindowSize(300, 300);
-  //   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-
-  //   glutCreateWindow("es2gears");
-
-  /* Set up glut callback functions */
-  //   glutIdleFunc(gears_idle);
-  //   glutReshapeFunc(gears_reshape);
-  //   glutDisplayFunc(gears_draw);
-  //   glutSpecialFunc(gears_special);
-
-#ifdef __WEBROGUE__
-  webrogue_gfx_make_window();
-  imported_init_ptrs();
-#else
   uint32_t WindowFlags = SDL_WINDOW_OPENGL;
   Window = SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags);
   assert(Window);
   SDL_GLContext Context = SDL_GL_CreateContext(Window);
-#endif
+  gladLoadGLES2((GLADloadfunc) &SDL_GL_GetProcAddress);
 
   gears_reshape(300, 300);
 
