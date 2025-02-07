@@ -6,7 +6,7 @@
 	url = https://github.com/webrogue-runtime/raylib.git
 [submodule "libs/SDL2"]
 	path = libs/SDL2
-	url = https://github.com/Destructor17/SDL.git
+	url = https://github.com/webrogue-runtime/SDL.git
 [submodule "stk"]
 	path = stk
 	url = https://github.com/webrogue-runtime/stk-code.git
@@ -36,7 +36,7 @@
 	url = https://github.com/curl/curl.git
 [submodule "libs/protobuf"]
 	path = libs/protobuf
-	url = https://github.com/protocolbuffers/protobuf.git
+	url = https://github.com/webrogue-runtime/protobuf.git
 [submodule "libs/abseil-cpp"]
 	path = libs/abseil-cpp
 	url = https://github.com/webrogue-runtime/abseil-cpp.git
