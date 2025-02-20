@@ -5,9 +5,10 @@
 #include <stddef.h>
 #include <string.h>
 #include "HostConnection.h"
+#include "ThreadInfo.h"
+#include "GL2Encoder.h"
 
 // clang-format off
-
 
 extern "C" void *__cxa_allocate_exception(size_t thrown_size) throw() {
     printf("__cxa_allocate_exception\n");
@@ -24,17 +25,23 @@ extern "C" void __cxa_throw(void *thrown_object, std::type_info *tinfo, void (*d
     abort();
 }
 
-__attribute__((import_name("init-ptrs")))
-__attribute__((import_module("webrogue-gl"))) void
-imported_init_ptrs();
-
-static std::unique_ptr<HostConnection> shared_host_connection = nullptr;
+__attribute__((import_name("init-gl")))
+__attribute__((import_module("webrogue-gfx"))) void
+imported_init_gl();
 
 extern "C" void* webrogueGLLoader(const char* procname) {
-  if(!shared_host_connection) {
-    shared_host_connection = HostConnection::createUnique();
-    shared_host_connection->gl2Encoder();
-    imported_init_ptrs();
+  if(!getEGLThreadInfo()->hostConn) {
+    imported_init_gl();
+    getEGLThreadInfo()->hostConn = HostConnection::createUnique();
+    // TODO GLSharedGroup should be stored in getEGLThreadInfo()->currentContext->sharedGroup
+    getEGLThreadInfo()->hostConn->gl2Encoder()->setSharedGroup(
+      gfxstream::guest::GLSharedGroupPtr(
+        new gfxstream::guest::GLSharedGroup()
+      )
+    );
+    getEGLThreadInfo()->hostConn->gl2Encoder()->setClientState(
+      new gfxstream::guest::GLClientState(2, 0)
+    );
   }
   if (strcmp(procname, "glActiveTexture") == 0)
     return (void *)glActiveTexture;

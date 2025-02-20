@@ -539,6 +539,7 @@ static void gears_draw(void) {
   draw_gear(gear2, transform, 3.1, -2.0, -2 * angle - 9.0, green);
   draw_gear(gear3, transform, -3.1, 4.2, -2 * angle - 25.0, blue);
 
+  glFlush();
   SDL_GL_SwapWindow(Window);
 }
 

@@ -172,8 +172,7 @@ build_abseil:
 	cd abseil-cpp && cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(CURRENT_DIR)/../dest
 	cmake --build abseil-cpp/build --target=all -j4
 	cmake --install abseil-cpp/build --prefix $(CURRENT_DIR)/../dest
-
-	rm /host_dir/examples/dest/lib/libabsl_all.a
+	rm -f /host_dir/examples/dest/lib/libabsl_all.a
 	/wasi-sdk/bin/llvm-ar qsL /host_dir/examples/dest/lib/libabsl_all.a /host_dir/examples/dest/lib/libabsl_*.a
 
 clean_abseil:
