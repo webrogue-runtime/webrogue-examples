@@ -3,29 +3,13 @@ cmake_minimum_required(VERSION 3.31)
 set(GFX_SRC_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../external/gfxstream)
 set(AEMU_SRC_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../external/aemu)
 
-add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.cc ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.h
-    COMMAND protoc --cpp_out=. ProgramBinary.proto
-    WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
-    DEPENDS ProgramBinary.proto
-)
-add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.proto
-    COMMAND cat ../../../external/gfxstream/guest/GLESv2_enc/ProgramBinary.proto protobuf_lite_suffix.txt >ProgramBinary.proto
-    WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
-    DEPENDS ${CMAKE_CURRENT_LIST_DIR}/../../../external/gfxstream/guest/GLESv2_enc/ProgramBinary.proto ${CMAKE_CURRENT_LIST_DIR}/protobuf_lite_suffix.txt
-)
-
 add_library(
     webrogue_gfx
     STATIC
     webrogue_gfx.c
-    # webrogue_gl_loader.c
-    webrogue_gl_loader.cpp
-    # gl2.c
-    ${CMAKE_CURRENT_LIST_DIR}/ProgramBinary.pb.cc
+    webrogue_gfx_gl.cpp
+
     ${GFX_SRC_DIR}/common/etc/etc.cpp
-    # ${GFX_SRC_DIR}/guest/GLESv2/gl2.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/GL2Encoder.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_enc.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/IOStream2.cpp
@@ -45,7 +29,6 @@ add_library(
     ${GFX_SRC_DIR}/guest/OpenglCodecCommon/IndexRangeCache.cpp
     
     ${GFX_SRC_DIR}/guest/android-emu/aemu/base/Tracing.cpp
-    ${AEMU_SRC_DIR}/host-common/logging_absl.cpp
 )
 
 target_include_directories(
