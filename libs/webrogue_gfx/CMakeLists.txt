@@ -8,6 +8,7 @@ add_library(
     STATIC
     webrogue_gfx.c
     webrogue_gfx_gl.cpp
+    webrogue_gfx_stream.cpp
 
     ${GFX_SRC_DIR}/common/etc/etc.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/GL2Encoder.cpp
@@ -20,7 +21,6 @@ add_library(
     ${GFX_SRC_DIR}/guest/OpenglSystemCommon/ThreadInfo.cpp
     ${GFX_SRC_DIR}/guest/OpenglSystemCommon/HostConnection.cpp
     ${GFX_SRC_DIR}/guest/OpenglSystemCommon/ProcessPipe.cpp
-    ${GFX_SRC_DIR}/guest/OpenglSystemCommon/WebrogueStream.cpp
     ${GFX_SRC_DIR}/guest/OpenglCodecCommon/GLClientState.cpp
     ${GFX_SRC_DIR}/guest/OpenglCodecCommon/glUtils.cpp
     ${GFX_SRC_DIR}/guest/OpenglCodecCommon/GLESTextureUtils.cpp
