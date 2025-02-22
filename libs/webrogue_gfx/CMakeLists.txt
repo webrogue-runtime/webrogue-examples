@@ -16,7 +16,6 @@ add_library(
     ${GFX_SRC_DIR}/guest/GLESv2_enc/IOStream2.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/GL2EncoderUtils.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/GLESv2Validation.cpp
-    ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_entry.cpp
     ${GFX_SRC_DIR}/guest/GLESv2_enc/gl2_client_context.cpp
     ${GFX_SRC_DIR}/guest/OpenglSystemCommon/ThreadInfo.cpp
     ${GFX_SRC_DIR}/guest/OpenglSystemCommon/HostConnection.cpp
