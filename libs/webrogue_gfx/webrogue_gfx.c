@@ -1,3 +1,4 @@
+#include "webrogue_gfx.h"
 #include <stdint.h>
 
 __attribute__((import_name("present")))

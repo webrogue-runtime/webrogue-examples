@@ -7,6 +7,7 @@ add_library(
     webrogue_gfx
     STATIC
     webrogue_gfx.c
+    webrogue_gfx_events.c
     webrogue_gfx_gl.cpp
     webrogue_gfx_stream.cpp
 

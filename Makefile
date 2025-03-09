@@ -1,4 +1,4 @@
-all: build_gears build_stk build_raylib
+all: build_gears build_raylib
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
