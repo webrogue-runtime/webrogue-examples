@@ -11,7 +11,7 @@ __attribute__((import_module("webrogue-gfx")))
 void imported_webrogue_gfx_poll_read(void *buf);
 #define BUF_SIZE(LEN) if(buffer_len < LEN) {\
     free(buffer_data);\
-    result.type = webrogue_event_type_invalid;\
+    result.type = WEBROGUE_EVENT_TYPE_INVALID;\
     return result;\
 }
 #define RETURN free(buffer_data); return result;
@@ -25,28 +25,32 @@ webrogue_event webrogue_gfx_poll() {
     imported_webrogue_gfx_poll_read(buffer_data);
     result.type = GET(uint32_t, 0);
     switch (result.type) {
-        case webrogue_event_type_mouse_down: {
+        case WEBROGUE_EVENT_TYPE_MOUSE_DOWN: {
             BUF_SIZE(16);
             result.inner.mouse_down.x = GET(uint32_t, 4);
             result.inner.mouse_down.y = GET(uint32_t, 8);
             result.inner.mouse_down.button = GET(uint32_t, 12);
             RETURN;
         }
-        case webrogue_event_type_mouse_up: {
+        case WEBROGUE_EVENT_TYPE_MOUSE_UP: {
             BUF_SIZE(16);
             result.inner.mouse_up.x = GET(uint32_t, 4);
             result.inner.mouse_up.y = GET(uint32_t, 8);
             result.inner.mouse_up.button = GET(uint32_t, 12);
             RETURN;
         }
-        case webrogue_event_type_mouse_motion: {
+        case WEBROGUE_EVENT_TYPE_MOUSE_MOTION: {
             BUF_SIZE(12);
             result.inner.mouse_motion.x = GET(uint32_t, 4);
             result.inner.mouse_motion.y = GET(uint32_t, 8);
             RETURN;
         }
+        case WEBROGUE_EVENT_TYPE_QUIT: {
+            BUF_SIZE(4);
+            RETURN;
+        }
         default: {
-            result.type = webrogue_event_type_invalid;
+            result.type = WEBROGUE_EVENT_TYPE_INVALID;
             RETURN;
         }
     }

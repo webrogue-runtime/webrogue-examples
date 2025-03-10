@@ -24,11 +24,14 @@ struct webrogue_event_mouse_motion {
     uint32_t x;
     uint32_t y;
 };
+struct webrogue_event_quit {
+};
 enum webrogue_event_type {
-    webrogue_event_type_invalid = 0,
-    webrogue_event_type_mouse_down = 1,
-    webrogue_event_type_mouse_up = 2,
-    webrogue_event_type_mouse_motion = 3,
+    WEBROGUE_EVENT_TYPE_INVALID = 0,
+    WEBROGUE_EVENT_TYPE_MOUSE_DOWN = 1,
+    WEBROGUE_EVENT_TYPE_MOUSE_UP = 2,
+    WEBROGUE_EVENT_TYPE_MOUSE_MOTION = 3,
+    WEBROGUE_EVENT_TYPE_QUIT = 4,
 };
 typedef struct webrogue_event {
     enum webrogue_event_type type;
@@ -36,6 +39,7 @@ typedef struct webrogue_event {
         struct webrogue_event_mouse_down mouse_down;
         struct webrogue_event_mouse_up mouse_up;
         struct webrogue_event_mouse_motion mouse_motion;
+        struct webrogue_event_quit quit;
     } inner;
 } webrogue_event;
 
