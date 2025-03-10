@@ -10,18 +10,32 @@ void webrogue_gfx_init_gl();
 void *webrogueGLLoader(const char *procname);
 
 // Events
-struct webrogue_event_mouse {
+struct webrogue_event_mouse_down {
+    uint32_t x;
+    uint32_t y;
+    uint32_t button;
+};
+struct webrogue_event_mouse_up {
+    uint32_t x;
+    uint32_t y;
+    uint32_t button;
+};
+struct webrogue_event_mouse_motion {
     uint32_t x;
     uint32_t y;
 };
 enum webrogue_event_type {
     webrogue_event_type_invalid = 0,
-    webrogue_event_type_mouse = 1,
+    webrogue_event_type_mouse_down = 1,
+    webrogue_event_type_mouse_up = 2,
+    webrogue_event_type_mouse_motion = 3,
 };
 typedef struct webrogue_event {
     enum webrogue_event_type type;
     union {
-        struct webrogue_event_mouse mouse;
+        struct webrogue_event_mouse_down mouse_down;
+        struct webrogue_event_mouse_up mouse_up;
+        struct webrogue_event_mouse_motion mouse_motion;
     } inner;
 } webrogue_event;
 
