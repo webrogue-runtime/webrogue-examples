@@ -24,9 +24,9 @@ extern "C" void __cxa_throw(void *thrown_object, std::type_info *tinfo, void (*d
     abort();
 }
 
-__attribute__((import_name("init-gl")))
-__attribute__((import_module("webrogue-gfx"))) void
-imported_init_gl();
+__attribute__((import_name("gl_init")))
+__attribute__((import_module("webrogue_gfx")))
+void imported_init_gl();
 
 extern "C" void* webrogueGLLoader(const char* procname) {
   if(!getEGLThreadInfo()->hostConn) {

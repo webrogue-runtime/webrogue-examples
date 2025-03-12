@@ -5,8 +5,8 @@ EXAMPLES_DIR:=$(shell dirname $(CURRENT_DIR))
 
 BUILD:
 	rm -f main.wasm
-	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
-	cmake -S . -B build --toolchain=$(CURRENT_DIR)/../toolchain.cmake -DCMAKE_SYSROOT=/wasix-sysroot -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
+	cmake -S . -B build --toolchain=/opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
+	cmake -S . -B build --toolchain=/opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake -DGLFW_BUILD_EXAMPLES=ON -DGLFW_BUILD_WEBROGUE=ON
 	cmake --build build --target=main --parallel
 	cp build/main main.wasm
 

@@ -2,46 +2,42 @@
 #include <stdint.h>
 
 __attribute__((import_name("present")))
-__attribute__((import_module("webrogue-gfx"))) void
-imported_webrogue_gfx_present();
+__attribute__((import_module("webrogue_gfx")))
+void imported_webrogue_gfx_present();
 
 void webrogue_gfx_present() { imported_webrogue_gfx_present(); }
 
-__attribute__((import_name("make-window")))
-__attribute__((import_module("webrogue-gfx"))) void
-imported_webrogue_gfx_make_window();
+__attribute__((import_name("make_window")))
+__attribute__((import_module("webrogue_gfx")))
+void imported_webrogue_gfx_make_window();
 
 void webrogue_gfx_make_window() { imported_webrogue_gfx_make_window(); }
 
-__attribute__((import_name("get-window-width")))
-__attribute__((import_module("webrogue-gfx"))) uint32_t
-imported_webrogue_gfx_get_window_width();
-
-__attribute__((import_name("get-window-height")))
-__attribute__((import_module("webrogue-gfx"))) uint32_t
-imported_webrogue_gfx_get_window_height();
+__attribute__((import_name("get_window_size")))
+__attribute__((import_module("webrogue_gfx"))) 
+void imported_webrogue_gfx_get_window_size(uint32_t* out_width, uint32_t* out_height);
 
 void webrogue_gfx_window_size(int *width, int *height) {
-  *width = imported_webrogue_gfx_get_window_width();
-  *height = imported_webrogue_gfx_get_window_height();
+  uint32_t out_width, out_height; // TODO pass width and height directly
+  imported_webrogue_gfx_get_window_size(&out_width, &out_height);
+  *width = out_width;
+  *height = out_height;
 }
 
-__attribute__((import_name("get-gl-width")))
-__attribute__((import_module("webrogue-gfx"))) uint32_t
-imported_webrogue_gfx_get_gl_width();
-
-__attribute__((import_name("get-gl-height")))
-__attribute__((import_module("webrogue-gfx"))) uint32_t
-imported_webrogue_gfx_get_gl_height();
+__attribute__((import_name("get_gl_size")))
+__attribute__((import_module("webrogue_gfx"))) 
+void imported_webrogue_gfx_get_gl_size(uint32_t* out_width, uint32_t* out_height);
 
 void webrogue_gfx_gl_size(int *width, int *height) {
-  *width = imported_webrogue_gfx_get_gl_width();
-  *height = imported_webrogue_gfx_get_gl_height();
+  uint32_t out_width, out_height; // TODO pass width and height directly
+  imported_webrogue_gfx_get_gl_size(&out_width, &out_height);
+  *width = out_width;
+  *height = out_height;
 }
 
-__attribute__((import_name("init-gl")))
-__attribute__((import_module("webrogue-gfx"))) void
-imported_webrogue_gfx_init_gl();
+__attribute__((import_name("gl_init")))
+__attribute__((import_module("webrogue_gfx")))
+void imported_webrogue_gfx_init_gl();
 
 void webrogue_gfx_init_gl() {
   imported_webrogue_gfx_init_gl();

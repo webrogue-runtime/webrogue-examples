@@ -1,7 +1,5 @@
-/wasi-sdk-*
-/wasix-sysroot
-/wasmer
-/*/*.webc
+/*/*.wrapp
 .DS_Store
 /target
 /stk-assets
+/webrogue-wrapp-cli

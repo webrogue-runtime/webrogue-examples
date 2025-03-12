@@ -3,12 +3,13 @@
 #include <stdlib.h>
 
 __attribute__((import_name("poll")))
-__attribute__((import_module("webrogue-gfx")))
-uint32_t imported_webrogue_gfx_poll();
+__attribute__((import_module("webrogue_gfx")))
+void imported_webrogue_gfx_poll(uint32_t* out_len);
 
-__attribute__((import_name("poll-read")))
-__attribute__((import_module("webrogue-gfx")))
+__attribute__((import_name("poll_read")))
+__attribute__((import_module("webrogue_gfx")))
 void imported_webrogue_gfx_poll_read(void *buf);
+
 #define BUF_SIZE(LEN) if(buffer_len < LEN) {\
     free(buffer_data);\
     result.type = WEBROGUE_EVENT_TYPE_INVALID;\
@@ -19,7 +20,8 @@ void imported_webrogue_gfx_poll_read(void *buf);
 
 webrogue_event webrogue_gfx_poll() {
     webrogue_event result;
-    uint32_t buffer_len = imported_webrogue_gfx_poll();
+    uint32_t buffer_len;
+    imported_webrogue_gfx_poll(&buffer_len);
     void* buffer_data = malloc(buffer_len);
     BUF_SIZE(4);
     imported_webrogue_gfx_poll_read(buffer_data);

@@ -36,7 +36,29 @@ __attribute__((export_name("exported_func_1"))) void exported_func_1() {
   // imported_func_1(*str);
   // imported_func_1(imported_func_2(20));
 }
+
+#include <pthread.h>
+
+void *thread(void *ptr)
+{
+    *((int*) ptr) = 15;
+    printf("Thread created\n");
+    return NULL;
+}
+
 int main(int argc, char **argv) {
+  pthread_t thread1;
+
+  int thread_result = 11;
+  int ret = pthread_create(&thread1, NULL, *thread, (void *) &thread_result);
+
+  printf("Thread ret: %d\n", ret );
+
+  pthread_join(thread1, NULL);
+
+
+  printf("Thread result: %d\n", thread_result );
+  
   FILE *file = fopen("/example_mods/simple/test_file.txt", "r");
   char readed[12] = "unin\0\0\0\0\0\0\0\0";
   readed[11] = '\0';

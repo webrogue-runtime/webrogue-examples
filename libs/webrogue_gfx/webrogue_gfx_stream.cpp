@@ -1,13 +1,13 @@
 #include "render-utils/IOStream.h"
 #include <cstdint>
 
-__attribute__((import_name("commit-buffer")))
-__attribute__((import_module("webrogue-gfx"))) void
-imported_webrogue_gfx_commit_buffer(const void* buf, uint32_t len);
+__attribute__((import_name("commit_buffer")))
+__attribute__((import_module("webrogue_gfx")))
+void imported_webrogue_gfx_commit_buffer(const void* buf, uint32_t len);
 
 
-__attribute__((import_name("ret-buffer-read")))
-__attribute__((import_module("webrogue-gfx"))) void
+__attribute__((import_name("ret_buffer_read")))
+__attribute__((import_module("webrogue_gfx"))) void
 imported_webrogue_gfx_ret_buffer_read(const void* buf, uint32_t len);
 
 class WebrogueStream : public gfxstream::IOStream {

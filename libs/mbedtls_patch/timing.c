@@ -32,7 +32,7 @@ struct _hr_time {
 
 #include <unistd.h>
 #include <sys/types.h>
-#include <signal.h>
+// #include <signal.h>
 /* time.h should be included independently of MBEDTLS_HAVE_TIME. If the
  * platform matches the ifdefs above, it will be used. */
 #include <time.h>

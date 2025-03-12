@@ -1,0 +1,11 @@
+{
+    "name": "simple",
+    "filesystem": {
+        "resources": [
+            {
+                "real_path": "test_file.txt",
+                "mapped_path": "test_file.txt"
+            }
+        ]
+    }
+}

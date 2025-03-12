@@ -1,11 +1,11 @@
-simple: simple.webc
+simple: simple.wrapp
 
 main.wasm: main.c Makefile
-	/wasi-sdk/bin/clang main.c --target=wasm32-wasip1 -g -O0 -Wl,--no-entry -o main.wasm #-nostdlib 
+	/opt/wasi-sdk/bin/clang main.c --target=wasm32-wasip1-threads -pthread -g -O0 -Wl,--no-entry -Wl,--import-memory -Wl,--export-memory -Wl,--max-memory=4294967296  -o main.wasm #-nostdlib 
 
-simple.webc: main.wasm
-	rm -f simple.webc
-	/.wasmer/bin/wasmer package build --out=simple.webc
+simple.wrapp: main.wasm
+	rm -f simple.wrapp
+	../webrogue-wrapp-cli . simple.wrapp
 
 clean:
-	rm -f main.wasm simple.webc
+	rm -f main.wasm simple.wrapp
