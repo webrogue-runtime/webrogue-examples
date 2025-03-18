@@ -1,6 +1,18 @@
 {
     "name": "simple",
     "id": "io.github.webrogue_runtime.examples.simple",
+    "version": "1.0.1",
+    "icons": {
+        "normal": {
+            "path": "icon.png",
+            "inset": 0.28,
+            "background": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+            }
+        }
+    },
     "filesystem": {
         "resources": [
             {

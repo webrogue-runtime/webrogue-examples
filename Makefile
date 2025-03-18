@@ -10,7 +10,7 @@ build_libs:
 	cd libs && $(MAKE)
 
 # apps
-build_simple: webrogue-wrapp-cli
+build_simple: webrogue-wrapp-cli build_libs
 	cd simple && $(MAKE)
 
 build_gears: build_libs
@@ -19,7 +19,7 @@ build_gears: build_libs
 build_glfw: build_libs
 	cd glfw && $(MAKE)
 
-build_raylib: build_libs
+build_raylib: webrogue-wrapp-cli build_libs
 	cd raylib && $(MAKE)
 
 stk-assets:

@@ -13,7 +13,7 @@ BUILD_:
 main.wasm: BUILD_
 
 
-raylib.wrapp: main.wasm
+raylib.wrapp: main.wasm webrogue.json
 	rm -f raylib.wrapp
 	../webrogue-wrapp-cli . raylib.wrapp
 
