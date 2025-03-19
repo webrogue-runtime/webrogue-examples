@@ -19,6 +19,5 @@ RUN test -f /usr/share/doc/kitware-archive-keyring/copyright || rm /usr/share/ke
 RUN apt-get -y install kitware-archive-keyring
 RUN apt-get -y install cmake
 COPY wasi-sdk-pthread.cmake /opt/wasi-sdk/share/cmake/wasi-sdk-pthread.cmake
-RUN cp /opt/wasi-sdk/share/wasi-sysroot/include/wasm32-wasip2/netdb.h /opt/wasi-sdk/share/wasi-sysroot/include/wasm32-wasi-threads/netdb.h
 
 # RUN rm -rf /usr/include/
