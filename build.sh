@@ -1,7 +1,7 @@
 set -ex
 cd $(dirname $0)
 
-image_name=webrogue_sysroot
+image_name=webrogue-sdk
 run_in_docker() {
     docker run \
         -it \
