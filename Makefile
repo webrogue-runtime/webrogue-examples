@@ -1,26 +1,19 @@
-all: build_simple build_raylib
+all: build_raylib build_simple
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-webrogue-wrapp-cli:
-	cargo build --release --manifest-path=/host_dir/crates/wrapp-cli/Cargo.toml --target-dir=target
-	cp target/release/webrogue-wrapp-cli webrogue-wrapp-cli
-
-build_libs:
-	cd libs && $(MAKE)
-
 # apps
-build_simple: webrogue-wrapp-cli build_libs
-	cd simple && $(MAKE)
+build_simple:
+	$(MAKE) -C simple
 
-build_gears: build_libs
+build_gears:
 	cd gears && $(MAKE)
 
-build_glfw: build_libs
+build_glfw:
 	cd glfw && $(MAKE)
 
-build_raylib: webrogue-wrapp-cli build_libs
-	cd raylib && $(MAKE)
+build_raylib:
+	$(MAKE) -C raylib
 
 stk-assets:
 	svn checkout https://svn.code.sf.net/p/supertuxkart/code/stk-assets stk-assets

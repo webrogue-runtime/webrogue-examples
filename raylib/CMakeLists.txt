@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+add_subdirectory(raylib)
 
 # file(COPY "${CMAKE_SOURCE_DIR}/assets" DESTINATION "${CMAKE_BINARY_DIR}")
 
@@ -15,7 +16,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(${PROJECT_TARGET} main.c)
 
 
-target_link_libraries(${PROJECT_TARGET} raylib glfw3 SDL2 webrogue_gfx c++ c++abi)
+target_link_libraries(${PROJECT_TARGET} raylib glfw3 SDL2 samplerate webrogue_gfx c++ c++abi)
 
 # target_include_directories(${PROJECT_TARGET} PRIVATE ../libs/raylib/src)
 target_link_options(${PROJECT_TARGET} PRIVATE -Wl,--max-memory=16777216)
