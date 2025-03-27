@@ -1,5 +1,5 @@
 [submodule "stk"]
-	path = stk
+	path = stk/stk-code
 	url = https://github.com/webrogue-runtime/stk-code.git
 [submodule "raylib/raylib"]
 	path = raylib/raylib

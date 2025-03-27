@@ -1,0 +1,16 @@
+{
+    "name": "stk",
+    "id": "org.supertuxkart.stk",
+    "version": "1.0.1",
+    "icons": {
+        "normal": {
+            "path": "stk-code/data/supertuxkart_1024.png",
+            "inset": 0.28,
+            "background": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+            }
+        }
+    }
+}
