@@ -12,5 +12,13 @@
                 "blue": 1
             }
         }
+    },
+    "filesystem": {
+        "resources": [
+            {
+                "real_path": "stk-code/data",
+                "mapped_path": "/data"
+            }
+        ]
     }
 }

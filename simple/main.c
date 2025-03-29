@@ -39,27 +39,32 @@ __attribute__((export_name("exported_func_1"))) void exported_func_1() {
 
 #include <pthread.h>
 
-void *thread(void *ptr)
-{
-    *((int*) ptr) = 15;
-    printf("Thread created\n");
-    return NULL;
+void *thread(void *ptr) {
+  *((int *)ptr) = 15;
+  printf("Thread created\n");
+  return NULL;
 }
 
 int main(int argc, char **argv) {
   pthread_t thread1;
 
   int thread_result = 11;
-  int ret = pthread_create(&thread1, NULL, *thread, (void *) &thread_result);
+  int ret = pthread_create(&thread1, NULL, *thread, (void *)&thread_result);
 
-  printf("Thread ret: %d\n", ret );
+  printf("Thread ret: %d\n", ret);
 
   pthread_join(thread1, NULL);
 
+  printf("Thread result: %d\n", thread_result);
 
-  printf("Thread result: %d\n", thread_result );
+  FILE *file = fopen("/app/test_file.txt", "r");
+  printf("file: %ld\n", file);
+  fseek(file, 1, SEEK_SET);
   
-  FILE *file = fopen("/example_mods/simple/test_file.txt", "r");
+  char* data = calloc(1, 100);
+  int read = fread(data, 1, 3, file);
+  printf("read: %d %s\n", read, data);
+
   char readed[12] = "unin\0\0\0\0\0\0\0\0";
   readed[11] = '\0';
   // fread(readed, 1, 11, file);
