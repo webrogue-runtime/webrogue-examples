@@ -19,6 +19,12 @@
                 "real_path": "test_file.txt",
                 "mapped_path": "/app/test_file.txt"
             }
+        ],
+        "persistent": [
+            {
+                "name": "data",
+                "mapped_path": "/data"
+            }
         ]
     }
 }
