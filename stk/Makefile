@@ -22,7 +22,7 @@ main.wasm: _BUILD
 
 stk.wrapp: main.wasm
 	rm -f stk.wrapp
-	webrogue-wrapp-cli . stk.wrapp
+	webrogue pack -o stk.wrapp
 
 clean:
 	rm -rf stk-code/build stk.wrapp main.wasm

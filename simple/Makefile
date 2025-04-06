@@ -15,7 +15,7 @@ main.wasm: _BUILD
 
 simple.wrapp: main.wasm webrogue.json
 	rm -f simple.wrapp
-	webrogue-wrapp-cli . simple.wrapp
+	webrogue pack -o simple.wrapp
 
 clean:
 	rm -f main.wasm simple.wrapp

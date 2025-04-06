@@ -20,7 +20,7 @@ main.wasm: _BUILD
 
 raylib.wrapp: main.wasm webrogue.json
 	rm -f raylib.wrapp
-	webrogue-wrapp-cli . raylib.wrapp
+	webrogue pack -o raylib.wrapp
 
 clean:
 	rm -rf build raylib.wrapp main.wasm
