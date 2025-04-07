@@ -1,8 +1,11 @@
-all: build_raylib build_simple build_stk
+all: build_empty build_raylib build_simple build_stk
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # apps
+build_empty:
+	$(MAKE) -C empty
+
 build_simple:
 	$(MAKE) -C simple
 
