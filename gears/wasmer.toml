@@ -1,8 +1,0 @@
-[[module]]
-name = "gears"
-source = "main.wasm"
-
-[[command]]
-name = "gears"
-module = "gears"
-runner = "https://webc.org/runner/webrogue"

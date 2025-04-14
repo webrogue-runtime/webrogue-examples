@@ -1,4 +1,4 @@
-all: build_empty build_raylib build_simple build_stk
+all: build_empty build_raylib build_simple
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 

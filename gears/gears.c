@@ -41,7 +41,7 @@
 #define _GNU_SOURCE
 
 #define GLAD_GLES2_IMPLEMENTATION
-#include "../libs/glfw/deps/glad/gles2.h"
+#include "glad/gles2.h"
 #include <assert.h>
 #include <math.h>
 #include <stdint.h>
@@ -721,7 +721,7 @@ int main(int argc, char *argv[]) {
   Window = SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags);
   assert(Window);
   SDL_GLContext Context = SDL_GL_CreateContext(Window);
-  gladLoadGLES2((GLADloadfunc) &SDL_GL_GetProcAddress);
+  gladLoadGLES2((GLADloadfunc)&SDL_GL_GetProcAddress);
 
   gears_reshape(300, 300);
 
