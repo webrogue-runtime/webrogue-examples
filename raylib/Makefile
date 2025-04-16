@@ -8,17 +8,17 @@ _BUILD:
 	cmake --build build --target=webrogue_raylib_example --parallel
 	cp build/webrogue_raylib_example main.wasm.hot
 
-main.wasm: _BUILD
-	cmp -s main.wasm.hot main.wasm; \
+main.wasm.cold: _BUILD
+	cmp -s main.wasm.hot main.wasm.cold; \
 	RETVAL=$$?; \
 	if [ $$RETVAL -eq 0 ]; then \
 	    echo; \
 	else \
 	    echo; \
-	    cp main.wasm.hot main.wasm; \
+	    cp main.wasm.hot main.wasm.cold; \
 	fi
 
-raylib.wrapp: main.wasm webrogue.json
+raylib.wrapp: main.wasm.cold webrogue.json
 	rm -f raylib.wrapp
 	webrogue pack -o raylib.wrapp
 
