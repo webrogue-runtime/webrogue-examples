@@ -16,4 +16,5 @@ add_subdirectory(raylib)
 add_executable(${PROJECT_TARGET} main.c)
 
 
-target_link_libraries(${PROJECT_TARGET} raylib glfw3 SDL2 samplerate webroguegfx c++ c++abi)
+target_link_libraries(${PROJECT_TARGET} raylib glfw3 SDL2)
+target_link_options(${PROJECT_TARGET} PRIVATE -v)
