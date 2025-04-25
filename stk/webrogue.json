@@ -2,6 +2,7 @@
     "name": "stk",
     "id": "org.supertuxkart.stk",
     "version": "1.0.1",
+    "main": "stk-code/build/bin/supertuxkart",
     "icons": {
         "normal": {
             "path": "stk-code/data/supertuxkart_1024.png",

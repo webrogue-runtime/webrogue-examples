@@ -1,4 +1,2 @@
 /.cache
 /build
-/main.wasm.cold
-/main.wasm.hot

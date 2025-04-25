@@ -2,7 +2,7 @@
     "name": "raylib example",
     "id": "io.github.webrogue_runtime.examples.raylib",
     "version": "0.1.0",
-    "main": "main.wasm.cold",
+    "main": "build/webrogue_raylib_example",
     "icons": {
         "normal": {
             "path": "icon.png",
