@@ -1,35 +1,10 @@
 {
     "configurations": [
         {
-            "type": "swift",
+            "type": "webrogue",
             "request": "launch",
-            "args": [
-                "run",
-                "--config",
-                "${workspaceFolder:swift}/webrogue.json"
-            ],
-            "cwd": "${workspaceFolder:swift}",
-            "name": "Debug webrogue main",
-            "program": "/home/someone/repos/webrogue/target/debug/webrogue",
-            "preLaunchTask": "swift: Build Debug main"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:swift}",
-            "name": "Debug main",
-            "program": "${workspaceFolder:swift}/.build/debug/main",
-            "preLaunchTask": "swift: Build Debug main"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:swift}",
-            "name": "Release main",
-            "program": "${workspaceFolder:swift}/.build/release/main",
-            "preLaunchTask": "swift: Build Release main"
+            "name": "Debug Webrogue Application",
+            "program": "${workspaceRoot}/webrogue.json"
         }
     ]
 }
