@@ -18,8 +18,19 @@
         "resources": [
             {
                 "real_path": "stk-code/data",
-                "mapped_path": "/data"
+                "mapped_path": "/app/data"
+            }
+        ],
+        "persistent": [
+            {
+                "mapped_path": "/persistent",
+                "name": "persistent"
             }
         ]
+    },
+    "env": {
+        "SUPERTUXKART_HIGHSCOREDIR": "/persistent",
+        "SUPERTUXKART_DATADIR": "/app",
+        "HOME": "/home/someone/wr_home"
     }
 }
