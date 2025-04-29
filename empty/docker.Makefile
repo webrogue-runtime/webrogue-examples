@@ -1,8 +1,5 @@
-empty: empty.wrapp
+empty: main.wasm
 
-empty.wrapp: main.wasm webrogue.json
-	rm -f empty.wrapp
-	webrogue pack -o empty.wrapp
+main.wasm:
 
 clean:
-	rm -f empty.wrapp
