@@ -31,6 +31,6 @@
     "env": {
         "SUPERTUXKART_HIGHSCOREDIR": "/persistent",
         "SUPERTUXKART_DATADIR": "/app",
-        "HOME": "/home/someone/wr_home"
+        "HOME": "/persistent"
     }
 }
