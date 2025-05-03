@@ -1,16 +1,16 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#if SDL_VERSION == 2
+#if USE_SDL_VERSION == 2
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 #define SDL_V(v2, v3) v2
-#elif SDL_VERSION == 3
+#elif USE_SDL_VERSION == 3
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 #define SDL_V(v2, v3) v3
 #else
-#error Unknown SDL_VERSION value
+#error Unknown USE_SDL_VERSION value
 #endif
 
 #define WINDOW_WIDTH 300
@@ -21,17 +21,15 @@
 - texture, rect: outputs.
 */
 void get_text_and_rect(SDL_Renderer *renderer, int x, int y, char *text,
-                       TTF_Font *font, SDL_Texture **texture, SDL_V(SDL_Rect, SDL_FRect) *rect)
-                       {
+                       TTF_Font *font, SDL_Texture **texture,
+                       SDL_V(SDL_Rect, SDL_FRect) * rect) {
   int text_width;
   int text_height;
   SDL_Surface *surface;
   SDL_Color textColor = {255, 255, 255, 0};
 
-  surface = SDL_V(
-    TTF_RenderText_Solid(font, text, textColor),
-    TTF_RenderText_Solid(font, text, strlen(text), textColor)
-  );
+  surface = SDL_V(TTF_RenderText_Solid(font, text, textColor),
+                  TTF_RenderText_Solid(font, text, strlen(text), textColor));
   *texture = SDL_CreateTextureFromSurface(renderer, surface);
   text_width = surface->w;
   text_height = surface->h;
@@ -56,10 +54,10 @@ int main(int argc, char **argv) {
 
   /* Inint TTF. */
   SDL_Init(SDL_V(SDL_INIT_VIDEO | SDL_INIT_TIMER, SDL_INIT_VIDEO));
-  SDL_V(
-    SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer),
-    SDL_CreateWindowAndRenderer("AAA?", WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer)
-  );
+  SDL_V(SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window,
+                                    &renderer),
+        SDL_CreateWindowAndRenderer("AAA?", WINDOW_WIDTH, WINDOW_WIDTH, 0,
+                                    &window, &renderer));
   TTF_Init();
   TTF_Font *font = TTF_OpenFont(font_path, 24);
   if (font == NULL) {
@@ -67,7 +65,8 @@ int main(int argc, char **argv) {
     exit(EXIT_FAILURE);
   }
   get_text_and_rect(renderer, 0, 0, "hello", font, &texture1, &rect1);
-  get_text_and_rect(renderer, 0, rect1.y + rect1.h, "world", font, &texture2, &rect2);
+  get_text_and_rect(renderer, 0, rect1.y + rect1.h, "world", font, &texture2,
+                    &rect2);
 
   frect1.x = 100;
   frect1.y = 100;
@@ -79,6 +78,11 @@ int main(int argc, char **argv) {
     while (SDL_PollEvent(&event) == 1) {
       if (event.type == SDL_V(SDL_QUIT, SDL_EVENT_QUIT)) {
         quit = 1;
+      }
+      if (event.type == SDL_V(SDL_KEYDOWN, SDL_EVENT_KEY_DOWN)) {
+        printf("Key pressed: %d %d\n",
+               SDL_V(event.key.keysym.scancode, event.key.scancode),
+               SDL_V(event.key.keysym.sym, event.key.key));
       }
     }
     // SDL_GL_GetAttribute SDL_GL_CONTEXT_DEBUG_FLAG
