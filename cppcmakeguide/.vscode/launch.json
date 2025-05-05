@@ -8,7 +8,7 @@
             "type": "webrogue",
             "request": "launch",
             "name": "Debug Webrogue Application",
-            "program": "${workspaceRoot}/out.wrapp",
+            "program": "${workspaceRoot}/webrogue.json",
             "preLaunchTask": "CMake: build",
         }
     ]
