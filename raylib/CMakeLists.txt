@@ -8,6 +8,17 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CUSTOMIZE_BUILD ON)
+set(SUPPORT_MODULE_RAUDIO OFF)
+set(USE_AUDIO OFF)
+set(SUPPORT_QUADS_DRAW_MODE ON)
+set(OPENGL_VERSION "ES 3.0")
+# -DOPENGL_INCLUDE_DIR=/opt/wasip1/include 
+set(PLATFORM SDL) # SDL GLFW
+#set(USE_EXTERNAL_GLFW ON)
+#set(glfw3_DIR /opt/wasip1/lib/cmake/glfw3)
+#set(SDL2_DIR /opt/wasip1/lib/cmake/SDL2)
+
 add_subdirectory(raylib)
 
 # file(COPY "${CMAKE_SOURCE_DIR}/assets" DESTINATION "${CMAKE_BINARY_DIR}")
