@@ -85,6 +85,10 @@ int main(int argc, char **argv) {
                SDL_V(event.key.keysym.sym, event.key.key));
       }
     }
+
+    int window_width, window_height;
+    SDL_V(SDL_GetRendererOutputSize,
+          SDL_GetRenderOutputSize)(renderer, &window_width, &window_height);
     // SDL_GL_GetAttribute SDL_GL_CONTEXT_DEBUG_FLAG
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
@@ -92,6 +96,8 @@ int main(int argc, char **argv) {
     // Set renderer color red to draw the square
     SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
 
+    frect1.x = window_width - 100;
+    frect1.y = window_height - 100;
     // Draw filled square
     SDL_RenderFillRect(renderer, &frect1);
 

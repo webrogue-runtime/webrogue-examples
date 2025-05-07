@@ -1,4 +1,4 @@
-all: build_sdl_dev build_raylib build_cppcmakeguide build_stk build_empty build_simple
+all: build_sdl_dev build_raylib build_stk # build_empty build_simple
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -20,9 +20,6 @@ build_raylib:
 
 build_stk:
 	$(MAKE) -C stk -f docker.Makefile
-
-build_cppcmakeguide:
-	$(MAKE) -C cppcmakeguide -f docker.Makefile
 
 build_sdl_dev:
 	$(MAKE) -C sdl_dev -f docker.Makefile

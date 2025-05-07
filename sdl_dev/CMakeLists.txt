@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.22.0 FATAL_ERROR)
 project(CppSDL)
 
 set(USE_SDL_VERSION 2)
-set(USE_SUBDIRECTORIES OFF)
+set(USE_SUBDIRECTORIES ON)
 
 if(USE_SUBDIRECTORIES)
     add_subdirectory(/webrogue_sdk_libs/webroguegfx webroguegfx)

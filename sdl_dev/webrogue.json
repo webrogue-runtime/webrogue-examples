@@ -1,6 +1,6 @@
 {
-    "name": "simple",
-    "id": "io.github.webrogue-runtime.examples.SDLDev",
+    "name": "sdl_dev",
+    "id": "webrogue.examples.SDLDev",
     "version": "0.1.0",
     "main": "build/sdl_dev",
     "filesystem": {
@@ -10,5 +10,16 @@
                 "real_path": "FreeSans.otf"
             }
         ]
+    },
+    "icons": {
+        "normal": {
+            "path": "icon.png",
+            "inset": 0.22,
+            "background": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+            }
+        }
     }
 }
