@@ -1,0 +1,6 @@
+{
+    "name": "glfw example",
+    "id": "io.github.webrogue_runtime.examples.glfw",
+    "version": "0.1.0",
+    "main": "build/main"
+}
