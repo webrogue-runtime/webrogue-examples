@@ -1,6 +1,17 @@
 {
     "name": "glfw example",
-    "id": "io.github.webrogue_runtime.examples.glfw",
+    "id": "io.github.webrogue_runtime.GlfwExample",
     "version": "0.1.0",
-    "main": "build/main"
+    "main": "build/main",
+    "icons": {
+        "normal": {
+            "path": "icon.png",
+            "inset": 0.28,
+            "background": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+            }
+        }
+    }
 }
