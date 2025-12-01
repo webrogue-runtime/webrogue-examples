@@ -51,7 +51,23 @@
 #include <sys/time.h>
 #include <unistd.h>
 
+
+#if 0 // SDL2
+
+#define USE_SDL2
+#define USE_SDL
+#define SDL_V(for_sdl2, for_sdl3) for_sdl2
 #include <SDL2/SDL.h>
+
+#elif 1 // SDL3
+
+#define USE_SDL3
+#define USE_SDL
+#define SDL_V(for_sdl2, for_sdl3) for_sdl3
+#include <SDL3/SDL.h>
+
+#else // GLFW
+#endif
 SDL_Window *Window;
 
 #define STRIPS_PER_TOOTH 7
@@ -718,10 +734,14 @@ static void gears_init(void) {
 
 int main(int argc, char *argv[]) {
   uint32_t WindowFlags = SDL_WINDOW_OPENGL;
-  Window = SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags);
+  Window = SDL_V(
+    SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags),
+    SDL_CreateWindow("OpenGL Test", 300, 300, WindowFlags)
+  );
   assert(Window);
   SDL_GLContext Context = SDL_GL_CreateContext(Window);
-  gladLoadGLES2((GLADloadfunc)&SDL_GL_GetProcAddress);
+  int gl_version = gladLoadGLES2((GLADloadfunc)&SDL_GL_GetProcAddress);
+  assert(gl_version >= GLAD_MAKE_VERSION(2, 0));
 
   gears_reshape(300, 300);
 
