@@ -1,4 +1,4 @@
-all: build_glfw build_gears # build_raylib build_sdl_dev build_stk build_empty build_simple
+all: build_glfw build_gears build_raylib # build_sdl_dev build_stk build_empty build_simple
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
