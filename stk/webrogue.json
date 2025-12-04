@@ -19,6 +19,10 @@
             {
                 "real_path": "stk-code/data",
                 "mapped_path": "/app/data"
+            },
+            {
+                "real_path": "stk-assets",
+                "mapped_path": "/assets"
             }
         ],
         "persistent": [
@@ -31,6 +35,7 @@
     "env": {
         "SUPERTUXKART_HIGHSCOREDIR": "/persistent",
         "SUPERTUXKART_DATADIR": "/app",
+        "SUPERTUXKART_ASSETS_DIR": "/assets/",
         "HOME": "/persistent"
     }
 }
