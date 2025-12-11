@@ -54,9 +54,9 @@ int main(int argc, char **argv) {
 
   /* Inint TTF. */
   SDL_Init(SDL_V(SDL_INIT_VIDEO | SDL_INIT_TIMER, SDL_INIT_VIDEO));
-  SDL_V(SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window,
+  SDL_V(SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, SDL_WINDOW_OPENGL, &window,
                                     &renderer),
-        SDL_CreateWindowAndRenderer("AAA?", WINDOW_WIDTH, WINDOW_WIDTH, 0,
+        SDL_CreateWindowAndRenderer("AAA?", WINDOW_WIDTH, WINDOW_WIDTH, SDL_WINDOW_VULKAN,
                                     &window, &renderer));
   TTF_Init();
   TTF_Font *font = TTF_OpenFont(font_path, 24);

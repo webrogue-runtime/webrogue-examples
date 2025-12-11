@@ -6,7 +6,7 @@ set(USE_SDL_VERSION 2)
 set(USE_SUBDIRECTORIES ON)
 
 if(USE_SUBDIRECTORIES)
-    add_subdirectory(/webrogue_sdk_libs/webroguegfx webroguegfx)
+    # add_subdirectory(/webrogue_sdk_libs/webroguegfx webroguegfx)
     set(BUILD_SHARED_LIBS OFF)
     if(USE_SDL_VERSION EQUAL 2)
         add_subdirectory(/webrogue_sdk_libs/libsamplerate libsamplerate)
@@ -33,7 +33,7 @@ else()
 endif()
 
 
-target_link_libraries(sdl_dev ${SDL_LIB_NAME} SDL${USE_SDL_VERSION}_ttf freetype png zlib webroguegfx c++ c++abi)
+target_link_libraries(sdl_dev ${SDL_LIB_NAME} SDL${USE_SDL_VERSION}_ttf freetype png zlib webroguegfx c++ c++abi EGL)
 if(USE_SDL_VERSION EQUAL 2)
     target_link_libraries(sdl_dev samplerate)
 endif()

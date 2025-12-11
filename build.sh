@@ -15,4 +15,4 @@ run_in_docker() {
         -t $image_name \
         bash -c "$1"
 }
-run_in_docker "make -C /examples_host_dir -f docker.Makefile"
+run_in_docker "make -C /examples_host_dir -f docker.Makefile $@"
