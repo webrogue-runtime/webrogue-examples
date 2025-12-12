@@ -52,23 +52,8 @@
 #include <unistd.h>
 
 
-#if 0 // SDL2
-
-#define USE_SDL2
-#define USE_SDL
-#define SDL_V(for_sdl2, for_sdl3) for_sdl2
-#include <SDL2/SDL.h>
-
-#elif 1 // SDL3
-
-#define USE_SDL3
-#define USE_SDL
-#define SDL_V(for_sdl2, for_sdl3) for_sdl3
-#include <SDL3/SDL.h>
-
-#else // GLFW
-#endif
-SDL_Window *Window;
+#include <GLFW/glfw3.h>
+GLFWwindow *window = NULL;
 
 #define STRIPS_PER_TOOTH 7
 #define VERTICES_PER_TOOTH 34
@@ -555,8 +540,8 @@ static void gears_draw(void) {
   draw_gear(gear2, transform, 3.1, -2.0, -2 * angle - 9.0, green);
   draw_gear(gear3, transform, -3.1, 4.2, -2 * angle - 25.0, blue);
 
-  glFlush();
-  SDL_GL_SwapWindow(Window);
+  glfwSwapBuffers(window);
+  glfwPollEvents();
 }
 
 /**
@@ -732,27 +717,48 @@ static void gears_init(void) {
   gear3 = create_gear(1.3, 2.0, 0.5, 10, 0.7);
 }
 
+void printGLFWError() {
+    const char* description;
+    int code = glfwGetError(&description);
+    if (code != GLFW_NO_ERROR) {
+        printf("GLFW Error: %d - %s\n", code, description);
+    }
+}
+
 int main(int argc, char *argv[]) {
-  uint32_t WindowFlags = SDL_WINDOW_OPENGL;
-  Window = SDL_V(
-    SDL_CreateWindow("OpenGL Test", 0, 0, 300, 300, WindowFlags),
-    SDL_CreateWindow("OpenGL Test", 300, 300, WindowFlags)
-  );
-  assert(Window);
-  SDL_GLContext Context = SDL_GL_CreateContext(Window);
-  int gl_version = gladLoadGLES2((GLADloadfunc)&SDL_GL_GetProcAddress);
+  if (!glfwInit()) {
+      printGLFWError();
+      return -1;
+  }
+  glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_ES_API);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+  
+
+  /* Create a windowed mode window and its OpenGL context */
+  window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+  if (!window)
+  {
+    printGLFWError();
+    glfwTerminate();
+    return -1;
+  }
+  glfwMakeContextCurrent(window);
+  int gl_version = gladLoadGLES2((GLADloadfunc)&glfwGetProcAddress);
   assert(gl_version >= GLAD_MAKE_VERSION(2, 0));
 
-  gears_reshape(300, 300);
 
   /* Initialize the gears */
   gears_init();
 
   //   glutMainLoop();
-  while (1) {
+  while (!glfwWindowShouldClose(window)) {
+    int width, height;
+    glfwGetFramebufferSize(window, &width, &height);
+    gears_reshape(width, height);
     gears_idle();
     gears_draw();
   }
-
+  glfwTerminate();
   return 0;
 }

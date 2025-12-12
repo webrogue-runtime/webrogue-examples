@@ -12,8 +12,7 @@ CLFLAGS = -Wl,--no-entry \
 	-Wl,--import-memory \
 	-Wl,--export-memory \
 	-Wl,--max-memory=4294967296 \
-	-lSDL3 \
-	-lsamplerate \
+	-lglfw3 \
 	-lwebroguegfx \
 	-lc++ \
 	-lc++abi \

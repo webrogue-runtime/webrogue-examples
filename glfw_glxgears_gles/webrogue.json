@@ -1,6 +1,6 @@
 {
-    "name": "glxgears",
-    "id": "io.github.webrogue_runtime.GLXGears",
+    "name": "glfw glxgears gles",
+    "id": "io.github.webrogue_runtime.GLFWGLXGearsGLES",
     "version": "0.1.0",
     "main": "main.wasm",
     "icons": {

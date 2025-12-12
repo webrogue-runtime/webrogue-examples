@@ -1,4 +1,4 @@
-all: build_glfw build_gears build_raylib build_stk build_empty build_simple build_sdl_dev
+all: build_glfw_vulkan build_glfw_glxgears_gles build_raylib build_stk build_empty build_simple build_sdl_dev
 
 CURRENT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -9,11 +9,11 @@ build_empty:
 build_simple:
 	$(MAKE) -C simple -f docker.Makefile
 
-build_gears:
-	$(MAKE) -C gears -f docker.Makefile
+build_glfw_glxgears_gles:
+	$(MAKE) -C glfw_glxgears_gles -f docker.Makefile
 
-build_glfw:
-	$(MAKE) -C glfw -f docker.Makefile
+build_glfw_vulkan:
+	$(MAKE) -C glfw_vulkan -f docker.Makefile
 
 build_raylib:
 	$(MAKE) -C raylib -f docker.Makefile
@@ -27,6 +27,7 @@ build_sdl_dev:
 clean:
 	$(MAKE) -C libs clean
 	$(MAKE) -C simple clean
-	$(MAKE) -C gears clean
-	$(MAKE) -C glfw clean
+	$(MAKE) -C glfw_glxgears_gles clean
+	$(MAKE) -C glfw_vulkan clean
 	$(MAKE) -C raylib clean
+	rm -f **/*.wrapp
