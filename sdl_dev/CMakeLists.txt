@@ -33,7 +33,7 @@ else()
 endif()
 
 
-target_link_libraries(sdl_dev ${SDL_LIB_NAME} SDL${USE_SDL_VERSION}_ttf freetype png zlib webroguegfx c++ c++abi EGL)
+target_link_libraries(sdl_dev ${SDL_LIB_NAME} SDL${USE_SDL_VERSION}_ttf freetype png zlib webroguegfx c++ c++abi EGL vulkan_gfxstream)
 if(USE_SDL_VERSION EQUAL 2)
     target_link_libraries(sdl_dev samplerate)
 endif()
