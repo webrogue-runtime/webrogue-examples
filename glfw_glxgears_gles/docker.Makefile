@@ -16,7 +16,8 @@ CLFLAGS = -Wl,--no-entry \
 	-lwebroguegfx \
 	-lc++ \
 	-lc++abi \
-	-lEGL
+	-lEGL \
+	-lvulkan_gfxstream
 
 main.wasm: gears.c docker.Makefile
 	${CC} $(CFLAGS) $(CLFLAGS) gears.c \
